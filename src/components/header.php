@@ -39,22 +39,22 @@
 
 <header class="bg-[#001c37]/90 backdrop-blur-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-        <div class="flex items-center gap-2">
+        <a href="index.php" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
                 <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" />
                 </svg>
             </div>
             <span class="text-2xl font-bold text-white uppercase tracking-tighter">Africa Tech</span>
-        </div>
+        </a>
 
         <nav class="hidden lg:flex items-center gap-8 text-white font-semibold text-sm">
-            <a href="#" class="hover:text-green-500">Accueil</a>
-            <a href="#" class="hover:text-green-500">A propos</a>
-            <a href="#" class="hover:text-green-500">Produits</a>
-            <a href="#" class="hover:text-green-500">Services</a>
-            <a href="#" class="hover:text-green-500">Formations</a>
-            <a href="#" class="hover:text-green-500">Contact</a>
+            <a href="index.php" class="<?php echo ($currentPage === 'accueil') ? 'text-green-500' : 'hover:text-green-500'; ?> transition-colors">Accueil</a>
+            <a href="about.php" class="<?php echo ($currentPage === 'about') ? 'text-green-500' : 'hover:text-green-500'; ?> transition-colors">A propos</a>
+            <a href="services.php" class="<?php echo ($currentPage === 'services') ? 'text-green-500' : 'hover:text-green-500'; ?> transition-colors">Services</a>
+            <a href="products.php" class="<?php echo ($currentPage === 'products') ? 'text-green-500' : 'hover:text-green-500'; ?> transition-colors">Produits</a>
+            <a href="formations.php" class="<?php echo ($currentPage === 'formations') ? 'text-green-500' : 'hover:text-green-500'; ?> transition-colors">Formations</a>
+            <a href="contact.php" class="<?php echo ($currentPage === 'contact') ? 'text-green-500' : 'hover:text-green-500'; ?> transition-colors">Contact</a>
         </nav>
 
         <div class="hidden lg:flex items-center gap-6 text-white border-l border-white/20 pl-6">
@@ -85,16 +85,16 @@
     
     <!-- Navigation links - centered vertically -->
     <nav class="flex-1 flex flex-col items-center justify-center gap-8 text-2xl text-white">
-        <a href="#" class="hover:text-green-500 transition-colors">Accueil</a>
-        <a href="#" class="hover:text-green-500 transition-colors">A propos</a>
-        <a href="#" class="hover:text-green-500 transition-colors">Produits</a>
-        <a href="#" class="hover:text-green-500 transition-colors">Services</a>
-        <a href="#" class="hover:text-green-500 transition-colors">Formations</a>
+        <a href="index.php" class="<?php echo ($currentPage === 'accueil') ? 'text-green-500' : 'hover:text-green-500'; ?> transition-colors">Accueil</a>
+        <a href="about.php" class="<?php echo ($currentPage === 'about') ? 'text-green-500' : 'hover:text-green-500'; ?> transition-colors">A propos</a>
+        <a href="services.php" class="<?php echo ($currentPage === 'services') ? 'text-green-500' : 'hover:text-green-500'; ?> transition-colors">Services</a>
+        <a href="products.php" class="<?php echo ($currentPage === 'products') ? 'text-green-500' : 'hover:text-green-500'; ?> transition-colors">Produits</a>
+        <a href="formations.php" class="<?php echo ($currentPage === 'formations') ? 'text-green-500' : 'hover:text-green-500'; ?> transition-colors">Formations</a>
     </nav>
     
     <!-- Contact button - fixed at bottom -->
     <div class="pb-8 px-4 w-full">
-        <a href="#" class="block w-full bg-white text-[#001c37] px-10 py-5 rounded font-bold uppercase text-sm hover:bg-green-500 hover:text-white transition-all text-center">
+        <a href="contact.php" class="block w-full <?php echo ($currentPage === 'contact') ? 'bg-green-500 text-white' : 'bg-white text-[#001c37]'; ?> px-10 py-5 rounded font-bold uppercase text-sm hover:bg-green-500 hover:text-white transition-all text-center">
             Contact
         </a>
     </div>

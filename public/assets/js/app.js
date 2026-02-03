@@ -43,7 +43,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Close menu when clicking on a link (UX improvement)
     const menuLinks = mobileMenu.querySelectorAll("a");
     menuLinks.forEach(link => {
-      link.addEventListener("click", closeMenu);
+      link.addEventListener("click", (e) => {
+        // Only close if it's an anchor link (starts with #)
+        if (link.getAttribute("href")?.startsWith("#")) {
+          closeMenu();
+        }
+      });
     });
   }
 });
