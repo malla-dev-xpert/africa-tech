@@ -75,14 +75,27 @@
             </svg>
         </button>
     </div>
-
-    <div id="mobile-menu" class="fixed inset-0 bg-[#001c37] z-[60] flex flex-col items-center justify-center gap-8 text-2xl text-white translate-x-full transition-transform duration-500 ease-in-out">
-        <button id="close-btn" class="absolute top-6 right-6 text-5xl">&times;</button>
-        <a href="#" class="hover:text-green-500">Accueil</a>
-        <a href="#" class="hover:text-green-500">A propos</a>
-        <a href="#" class="hover:text-green-500">Produits</a>
-        <a href="#" class="hover:text-green-500">Services</a>
-        <a href="#" class="hover:text-green-500">Formations</a>
-        <a href="#" class="hover:text-green-500">Contact</a>
-    </div>
 </header>
+
+<!-- Mobile menu moved outside header for proper fixed positioning -->
+<!-- Fixed positioning requires the element to be positioned relative to viewport, not parent container -->
+<div id="mobile-menu" class="fixed inset-0 bg-[#001c37] z-[100] flex flex-col translate-x-full transition-transform duration-500 ease-in-out">
+    <!-- Close button -->
+    <button id="close-btn" class="absolute top-6 right-6 text-5xl text-white z-10">&times;</button>
+    
+    <!-- Navigation links - centered vertically -->
+    <nav class="flex-1 flex flex-col items-center justify-center gap-8 text-2xl text-white">
+        <a href="#" class="hover:text-green-500 transition-colors">Accueil</a>
+        <a href="#" class="hover:text-green-500 transition-colors">A propos</a>
+        <a href="#" class="hover:text-green-500 transition-colors">Produits</a>
+        <a href="#" class="hover:text-green-500 transition-colors">Services</a>
+        <a href="#" class="hover:text-green-500 transition-colors">Formations</a>
+    </nav>
+    
+    <!-- Contact button - fixed at bottom -->
+    <div class="pb-8 px-4 w-full">
+        <a href="#" class="block w-full bg-white text-[#001c37] px-10 py-5 rounded font-bold uppercase text-sm hover:bg-green-500 hover:text-white transition-all text-center">
+            Contact
+        </a>
+    </div>
+</div>
