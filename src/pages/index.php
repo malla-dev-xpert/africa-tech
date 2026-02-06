@@ -2,6 +2,19 @@
 $currentPage = 'accueil';
 $pageTitle = 'Accueil - AFRICIA TECH';
 $pageDescription = 'AFRICIA TECH - Solutions solaires, électricité, domotique et formations en énergies renouvelables au Mali. Expertise technique, équipements de qualité, accompagnement durable.';
+
+$products = [];
+$productsShowAllLink = true;
+try {
+    require __DIR__ . '/../config/db.php';
+    $stmt = $pdo->query("SELECT id, name, description, price, imageUrl FROM products ORDER BY created_at DESC LIMIT 6");
+    if ($stmt) {
+        $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+} catch (Throwable $e) {
+    $products = [];
+}
+
 require __DIR__ . '/../layouts/main.php';
 ?>
 

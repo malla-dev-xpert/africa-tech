@@ -256,7 +256,7 @@ if (isset($_GET['deleted']) && $_GET['deleted'] === '1') {
                 <div id="products-container" class="hidden"></div>
             <?php else: ?>
                 <div id="products-empty" class="hidden"></div>
-                <div id="products-container" class="products-grid">
+                <div id="products-container" class="products-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <?php foreach ($products as $p): ?>
                         <article class="product-card bg-slate-50 rounded-xl border border-gray-200 overflow-hidden flex flex-col" data-id="<?= (int) $p['id'] ?>" data-name="<?= htmlspecialchars($p['name']) ?>" data-description="<?= htmlspecialchars($p['description'] ?? '') ?>" data-price="<?= htmlspecialchars($p['price']) ?>" data-imageurl="/<?= htmlspecialchars($p['imageUrl']) ?>">
                             <div class="relative h-44 overflow-hidden bg-gradient-to-br from-[#001c37] to-[#003366] flex-shrink-0">
