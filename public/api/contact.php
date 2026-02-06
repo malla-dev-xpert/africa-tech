@@ -49,7 +49,7 @@ $subject = htmlspecialchars(trim($input['subject']), ENT_QUOTES, 'UTF-8');
 $message = htmlspecialchars(trim($input['message']), ENT_QUOTES, 'UTF-8');
 
 // Email configuration
-$to = 'contact@africa-tech.com'; // Replace with your actual email
+$to = 'ouroayat@gmail.com'; // Replace with your actual email
 $emailSubject = 'Nouveau message de contact - ' . $subject;
 $emailBody = "
 Nouveau message reçu depuis le formulaire de contact du site AFRICIA TECH

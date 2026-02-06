@@ -5,7 +5,7 @@
                 <svg class="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                 </svg>
-                contact@africa-tech.com
+                ouroayat@gmail.com
             </span>
             <span class="flex items-center gap-2">
                 <svg class="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -59,7 +59,7 @@
                 </svg>
                 <div class="text-right">
                     <p class="text-[10px] text-gray-400 uppercase">Appelez-nous</p>
-                    <p class="font-bold text-sm">+223 70 70 70 70</p>
+                    <p class="font-bold text-sm">+223 95 20 55 56</p>
                 </div>
             </div>
         </div>

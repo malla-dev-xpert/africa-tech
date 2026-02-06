@@ -21,7 +21,7 @@
                 </div>
                 <h3 class="text-xl font-bold mb-4">Installation solaire</h3>
                 <p class="text-gray-300 mb-6 leading-relaxed">Installation complète de systèmes photovoltaïques pour particuliers et entreprises. Étude, dimensionnement et installation sur mesure.</p>
-                <a href="https://wa.me/22370707070?text=Bonjour,%20je%20souhaite%20un%20devis%20pour%20une%20installation%20solaire" target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all">
+                <a href="https://wa.me/22395205556?text=Bonjour.%20Je%20suis%20int%C3%A9ress%C3%A9%20par%20l%27installation%20solaire%20pour%20en%20savoir%20plus." target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all">
                     Demander un devis WhatsApp
                 </a>
             </div>
@@ -35,7 +35,7 @@
                 </div>
                 <h3 class="text-xl font-bold mb-4">Électricité bâtiment</h3>
                 <p class="text-gray-300 mb-6 leading-relaxed">Installation électrique complète pour maisons, bureaux et bâtiments industriels. Conformité aux normes en vigueur.</p>
-                <a href="https://wa.me/22370707070?text=Bonjour,%20je%20souhaite%20un%20devis%20pour%20une%20installation%20électrique" target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all">
+                <a href="https://wa.me/22395205556?text=Bonjour.%20Je%20suis%20int%C3%A9ress%C3%A9%20par%20l%27%C3%A9lectricit%C3%A9%20b%C3%A2timent%20pour%20en%20savoir%20plus." target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all">
                     Demander un devis WhatsApp
                 </a>
             </div>
@@ -49,7 +49,7 @@
                 </div>
                 <h3 class="text-xl font-bold mb-4">Climatisation</h3>
                 <p class="text-gray-300 mb-6 leading-relaxed">Installation et maintenance de systèmes de climatisation adaptés au climat malien. Solutions économes en énergie.</p>
-                <a href="https://wa.me/22370707070?text=Bonjour,%20je%20souhaite%20un%20devis%20pour%20la%20climatisation" target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all">
+                <a href="https://wa.me/22395205556?text=Bonjour.%20Je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20climatisation%20pour%20en%20savoir%20plus." target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all">
                     Demander un devis WhatsApp
                 </a>
             </div>
@@ -64,7 +64,7 @@
                 </div>
                 <h3 class="text-xl font-bold mb-4">Maintenance</h3>
                 <p class="text-gray-300 mb-6 leading-relaxed">Maintenance préventive et corrective de vos installations solaires et électriques. Intervention rapide et efficace.</p>
-                <a href="https://wa.me/22370707070?text=Bonjour,%20je%20souhaite%20un%20devis%20pour%20la%20maintenance" target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all">
+                <a href="https://wa.me/22395205556?text=Bonjour.%20Je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20maintenance%20pour%20en%20savoir%20plus." target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all">
                     Demander un devis WhatsApp
                 </a>
             </div>
@@ -78,7 +78,7 @@
                 </div>
                 <h3 class="text-xl font-bold mb-4">Domotique</h3>
                 <p class="text-gray-300 mb-6 leading-relaxed">Automatisation et contrôle intelligent de votre habitat. Éclairage, sécurité, climatisation et énergie connectés.</p>
-                <a href="https://wa.me/22370707070?text=Bonjour,%20je%20souhaite%20un%20devis%20pour%20la%20domotique" target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all">
+                <a href="https://wa.me/22395205556?text=Bonjour.%20Je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20domotique%20pour%20en%20savoir%20plus." target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all">
                     Demander un devis WhatsApp
                 </a>
             </div>
@@ -92,7 +92,7 @@
                 </div>
                 <h3 class="text-xl font-bold mb-4">Forage</h3>
                 <p class="text-gray-300 mb-6 leading-relaxed">Forage de puits et installation de pompes solaires pour l'accès à l'eau. Solutions autonomes et durables.</p>
-                <a href="https://wa.me/22370707070?text=Bonjour,%20je%20souhaite%20un%20devis%20pour%20un%20forage" target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all">
+                <a href="https://wa.me/22395205556?text=Bonjour.%20Je%20suis%20int%C3%A9ress%C3%A9%20par%20le%20forage%20pour%20en%20savoir%20plus." target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all">
                     Demander un devis WhatsApp
                 </a>
             </div>

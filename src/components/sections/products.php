@@ -30,7 +30,7 @@
                         <span class="text-yellow-400">✓</span> Résistance aux intempéries
                     </li>
                 </ul>
-                <a href="https://wa.me/22370707070?text=Bonjour,%20je%20suis%20intéressé%20par%20vos%20panneaux%20solaires" target="_blank" rel="noopener" class="block w-full bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all text-center">
+                <a href="https://wa.me/22395205556?text=Bonjour,%20je%20suis%20intéressé%20par%20vos%20panneaux%20solaires" target="_blank" rel="noopener" class="block w-full bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all text-center">
                     Je suis intéressé
                 </a>
             </div>
@@ -53,7 +53,7 @@
                         <span class="text-yellow-400">✓</span> Maintenance réduite
                     </li>
                 </ul>
-                <a href="https://wa.me/22370707070?text=Bonjour,%20je%20suis%20intéressé%20par%20vos%20batteries" target="_blank" rel="noopener" class="block w-full bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all text-center">
+                <a href="https://wa.me/22395205556?text=Bonjour,%20je%20suis%20intéressé%20par%20vos%20batteries" target="_blank" rel="noopener" class="block w-full bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all text-center">
                     Je suis intéressé
                 </a>
             </div>
@@ -76,7 +76,7 @@
                         <span class="text-yellow-400">✓</span> Puissances variées
                     </li>
                 </ul>
-                <a href="https://wa.me/22370707070?text=Bonjour,%20je%20suis%20intéressé%20par%20vos%20kits%20solaires" target="_blank" rel="noopener" class="block w-full bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all text-center">
+                <a href="https://wa.me/22395205556?text=Bonjour,%20je%20suis%20intéressé%20par%20vos%20kits%20solaires" target="_blank" rel="noopener" class="block w-full bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all text-center">
                     Je suis intéressé
                 </a>
             </div>
@@ -99,7 +99,7 @@
                         <span class="text-yellow-400">✓</span> Monitoring intelligent
                     </li>
                 </ul>
-                <a href="https://wa.me/22370707070?text=Bonjour,%20je%20suis%20intéressé%20par%20vos%20onduleurs" target="_blank" rel="noopener" class="block w-full bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all text-center">
+                <a href="https://wa.me/22395205556?text=Bonjour,%20je%20suis%20intéressé%20par%20vos%20onduleurs" target="_blank" rel="noopener" class="block w-full bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all text-center">
                     Je suis intéressé
                 </a>
             </div>
@@ -122,7 +122,7 @@
                         <span class="text-yellow-400">✓</span> Économique
                     </li>
                 </ul>
-                <a href="https://wa.me/22370707070?text=Bonjour,%20je%20suis%20intéressé%20par%20vos%20lampadaires%20solaires" target="_blank" rel="noopener" class="block w-full bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all text-center">
+                <a href="https://wa.me/22395205556?text=Bonjour,%20je%20suis%20intéressé%20par%20vos%20lampadaires%20solaires" target="_blank" rel="noopener" class="block w-full bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all text-center">
                     Je suis intéressé
                 </a>
             </div>
