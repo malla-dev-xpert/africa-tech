@@ -17,11 +17,11 @@ require __DIR__ . '/../layouts/main.php';
 <!-- Services Section Component -->
 <?php require __DIR__ . '/../components/sections/services.php'; ?>
 
-<!-- Video Section Component with Parallax -->
-<?php require __DIR__ . '/../components/sections/video.php'; ?>
-
 <!-- Products Section Component -->
 <?php require __DIR__ . '/../components/sections/products.php'; ?>
+
+<!-- Video Section Component with Parallax -->
+<?php require __DIR__ . '/../components/sections/video.php'; ?>
 
 <!-- Formations Section Component -->
 <?php require __DIR__ . '/../components/sections/formations.php'; ?>

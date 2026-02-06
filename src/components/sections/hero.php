@@ -2,7 +2,7 @@
 <section id="hero" class="relative min-h-[90vh] flex items-center overflow-hidden">
     <div class="absolute inset-0 z-0 parallax">
         <!-- Real image from Unsplash - Solar panels installation -->
-        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+        <img src="../assets/images/hero.jpeg" 
              alt="Installation de panneaux solaires AFRICIA TECH" 
              class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-gradient-to-r from-[#001c37] via-[#001c37]/80 to-transparent"></div>

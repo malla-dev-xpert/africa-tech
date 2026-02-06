@@ -14,7 +14,7 @@
                 <div class="relative rounded-3xl overflow-visible shadow-2xl w-full h-full group">
                     <div class="relative w-full h-full rounded-3xl overflow-hidden">
                         <img 
-                            src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                            src="../assets/images/landing-about.jpeg" 
                             alt="Équipe AFRICIA TECH - Installation de panneaux solaires" 
                             class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
                         >
