@@ -3,11 +3,11 @@
     <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-16 slide-up">
             <div class="flex items-center justify-center gap-2 mb-4">
-                <span class="w-10 h-[2px] bg-green-500"></span>
-                <span class="uppercase text-xs font-bold tracking-[0.2em] text-green-500">Témoignages</span>
-                <span class="w-10 h-[2px] bg-green-500"></span>
+                <span class="w-10 h-[2px] bg-yellow-400"></span>
+                <span class="uppercase text-xs font-bold tracking-[0.2em] text-yellow-400">Témoignages</span>
+                <span class="w-10 h-[2px] bg-yellow-400"></span>
             </div>
-            <h2 class="text-4xl md:text-6xl font-black text-[#001c37] mb-6">Ce que disent nos <span class="text-green-500">Clients</span></h2>
+            <h2 class="text-4xl md:text-6xl font-black text-[#001c37] mb-6">Ce que disent nos <span class="text-yellow-400">Clients</span></h2>
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
@@ -33,7 +33,7 @@
                     "Installation solaire parfaite ! L'équipe AFRICIA TECH est professionnelle, à l'écoute et très compétente. Nous sommes maintenant autonomes en énergie."
                 </p>
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">
+                    <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-white font-bold">
                         AM
                     </div>
                     <div>
@@ -65,7 +65,7 @@
                     "Formation excellente ! J'ai pu développer mes compétences en énergies renouvelables et trouver un emploi rapidement. Merci AFRICIA TECH !"
                 </p>
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">
+                    <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-white font-bold">
                         MK
                     </div>
                     <div>
@@ -97,7 +97,7 @@
                     "Service de maintenance irréprochable. L'équipe intervient rapidement et efficacement. Nos installations fonctionnent parfaitement depuis 3 ans."
                 </p>
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">
+                    <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-white font-bold">
                         BT
                     </div>
                     <div>

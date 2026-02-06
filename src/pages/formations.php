@@ -17,11 +17,11 @@ require __DIR__ . '/../layouts/main.php';
     </div>
     <div class="relative z-10 max-w-7xl mx-auto px-4 text-center text-white">
         <div class="flex items-center justify-center gap-2 mb-4">
-            <span class="w-10 h-[2px] bg-green-500"></span>
-            <span class="uppercase text-xs font-bold tracking-[0.2em] text-green-500">Formations</span>
-            <span class="w-10 h-[2px] bg-green-500"></span>
+            <span class="w-10 h-[2px] bg-yellow-400"></span>
+            <span class="uppercase text-xs font-bold tracking-[0.2em] text-yellow-400">Formations</span>
+            <span class="w-10 h-[2px] bg-yellow-400"></span>
         </div>
-        <h1 class="text-4xl md:text-6xl font-black mb-4">Formation <span class="text-green-500">Professionnelle</span></h1>
+        <h1 class="text-4xl md:text-6xl font-black mb-4">Formation <span class="text-yellow-400">Professionnelle</span></h1>
         <p class="text-xl text-gray-300 max-w-3xl mx-auto">Développez vos compétences dans les énergies renouvelables et l'électricité</p>
     </div>
 </section>
@@ -34,18 +34,18 @@ require __DIR__ . '/../layouts/main.php';
     <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-16 slide-up">
             <div class="flex items-center justify-center gap-2 mb-4">
-                <span class="w-10 h-[2px] bg-green-500"></span>
-                <span class="uppercase text-xs font-bold tracking-[0.2em] text-green-500">Programme</span>
-                <span class="w-10 h-[2px] bg-green-500"></span>
+                <span class="w-10 h-[2px] bg-yellow-400"></span>
+                <span class="uppercase text-xs font-bold tracking-[0.2em] text-yellow-400">Programme</span>
+                <span class="w-10 h-[2px] bg-yellow-400"></span>
             </div>
-            <h2 class="text-4xl md:text-5xl font-black text-[#001c37] mb-6">Contenu des <span class="text-green-500">Formations</span></h2>
+            <h2 class="text-4xl md:text-5xl font-black text-[#001c37] mb-6">Contenu des <span class="text-yellow-400">Formations</span></h2>
             <p class="text-gray-600 max-w-2xl mx-auto">Des programmes complets et pratiques pour maîtriser les énergies renouvelables</p>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8">
             <div class="bg-white rounded-xl p-8 shadow-lg slide-up">
                 <h3 class="text-2xl font-black text-[#001c37] mb-6 flex items-center gap-3">
-                    <span class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center text-white font-bold">1</span>
+                    <span class="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center text-white font-bold">1</span>
                     Formation Installation Solaire
                 </h3>
                 <div class="space-y-4">
@@ -78,7 +78,7 @@ require __DIR__ . '/../layouts/main.php';
 
             <div class="bg-white rounded-xl p-8 shadow-lg slide-up">
                 <h3 class="text-2xl font-black text-[#001c37] mb-6 flex items-center gap-3">
-                    <span class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center text-white font-bold">2</span>
+                    <span class="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center text-white font-bold">2</span>
                     Formation Électricité Bâtiment
                 </h3>
                 <div class="space-y-4">
@@ -117,21 +117,21 @@ require __DIR__ . '/../layouts/main.php';
     <div class="max-w-7xl mx-auto px-4">
         <div class="grid md:grid-cols-2 gap-12 items-center">
             <div class="slide-up">
-                <div class="w-20 h-20 bg-green-500 rounded-xl flex items-center justify-center mb-6">
+                <div class="w-20 h-20 bg-yellow-400 rounded-xl flex items-center justify-center mb-6">
                     <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                     </svg>
                 </div>
-                <h2 class="text-4xl md:text-5xl font-black text-[#001c37] mb-6">Certification <span class="text-green-500">Professionnelle</span></h2>
+                <h2 class="text-4xl md:text-5xl font-black text-[#001c37] mb-6">Certification <span class="text-yellow-400">Professionnelle</span></h2>
                 <p class="text-gray-600 mb-6 leading-relaxed">
                     À l'issue de chaque formation, les participants reçoivent un certificat professionnel reconnu, attestant de leurs compétences en énergies renouvelables ou en électricité bâtiment.
                 </p>
                 <p class="text-gray-600 mb-8 leading-relaxed">
                     Cette certification ouvre des opportunités d'emploi dans un secteur en pleine croissance et vous permet de travailler en tant que technicien indépendant ou d'intégrer des entreprises spécialisées.
                 </p>
-                <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded">
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded">
                     <p class="text-gray-700 font-semibold">
-                        <span class="text-green-500 font-black">85%</span> de nos anciens stagiaires trouvent un emploi dans les 6 mois suivant leur certification.
+                        <span class="text-yellow-400 font-black">85%</span> de nos anciens stagiaires trouvent un emploi dans les 6 mois suivant leur certification.
                     </p>
                 </div>
             </div>
@@ -141,7 +141,7 @@ require __DIR__ . '/../layouts/main.php';
                     <h3 class="text-2xl font-black mb-6">Avantages de la certification</h3>
                     <ul class="space-y-4">
                         <li class="flex items-start gap-3">
-                            <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <svg class="w-6 h-6 text-yellow-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                             </svg>
                             <div>
@@ -150,7 +150,7 @@ require __DIR__ . '/../layouts/main.php';
                             </div>
                         </li>
                         <li class="flex items-start gap-3">
-                            <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <svg class="w-6 h-6 text-yellow-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                             </svg>
                             <div>
@@ -159,7 +159,7 @@ require __DIR__ . '/../layouts/main.php';
                             </div>
                         </li>
                         <li class="flex items-start gap-3">
-                            <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <svg class="w-6 h-6 text-yellow-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                             </svg>
                             <div>
@@ -168,7 +168,7 @@ require __DIR__ . '/../layouts/main.php';
                             </div>
                         </li>
                         <li class="flex items-start gap-3">
-                            <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <svg class="w-6 h-6 text-yellow-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                             </svg>
                             <div>

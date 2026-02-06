@@ -17,11 +17,11 @@ require __DIR__ . '/../layouts/main.php';
     </div>
     <div class="relative z-10 max-w-7xl mx-auto px-4 text-center text-white">
         <div class="flex items-center justify-center gap-2 mb-4">
-            <span class="w-10 h-[2px] bg-green-500"></span>
-            <span class="uppercase text-xs font-bold tracking-[0.2em] text-green-500">Contact</span>
-            <span class="w-10 h-[2px] bg-green-500"></span>
+            <span class="w-10 h-[2px] bg-yellow-400"></span>
+            <span class="uppercase text-xs font-bold tracking-[0.2em] text-yellow-400">Contact</span>
+            <span class="w-10 h-[2px] bg-yellow-400"></span>
         </div>
-        <h1 class="text-4xl md:text-6xl font-black mb-4">Contactez-<span class="text-green-500">nous</span></h1>
+        <h1 class="text-4xl md:text-6xl font-black mb-4">Contactez-<span class="text-yellow-400">nous</span></h1>
         <p class="text-xl text-gray-300 max-w-3xl mx-auto">Notre équipe est à votre écoute pour répondre à toutes vos questions</p>
     </div>
 </section>
@@ -50,9 +50,9 @@ require __DIR__ . '/../layouts/main.php';
                             <span class="text-gray-600">Fermé</span>
                         </div>
                     </div>
-                    <div class="mt-8 p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
+                    <div class="mt-8 p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
                         <p class="text-sm text-gray-700">
-                            <span class="font-bold text-green-500">Urgence ?</span> Notre service de maintenance est disponible 24/7 pour les interventions d'urgence.
+                            <span class="font-bold text-yellow-400">Urgence ?</span> Notre service de maintenance est disponible 24/7 pour les interventions d'urgence.
                         </p>
                     </div>
                 </div>
@@ -62,7 +62,7 @@ require __DIR__ . '/../layouts/main.php';
                 <h2 class="text-3xl font-black text-[#001c37] mb-6">Pourquoi nous contacter ?</h2>
                 <div class="space-y-4">
                     <div class="flex items-start gap-4 bg-white p-6 rounded-xl shadow-lg">
-                        <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <div class="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center flex-shrink-0">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                             </svg>
@@ -74,7 +74,7 @@ require __DIR__ . '/../layouts/main.php';
                     </div>
 
                     <div class="flex items-start gap-4 bg-white p-6 rounded-xl shadow-lg">
-                        <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <div class="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center flex-shrink-0">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
@@ -86,7 +86,7 @@ require __DIR__ . '/../layouts/main.php';
                     </div>
 
                     <div class="flex items-start gap-4 bg-white p-6 rounded-xl shadow-lg">
-                        <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <div class="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center flex-shrink-0">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
@@ -107,11 +107,11 @@ require __DIR__ . '/../layouts/main.php';
     <div class="max-w-4xl mx-auto px-4">
         <div class="text-center mb-16 slide-up">
             <div class="flex items-center justify-center gap-2 mb-4">
-                <span class="w-10 h-[2px] bg-green-500"></span>
-                <span class="uppercase text-xs font-bold tracking-[0.2em] text-green-500">Questions fréquentes</span>
-                <span class="w-10 h-[2px] bg-green-500"></span>
+                <span class="w-10 h-[2px] bg-yellow-400"></span>
+                <span class="uppercase text-xs font-bold tracking-[0.2em] text-yellow-400">Questions fréquentes</span>
+                <span class="w-10 h-[2px] bg-yellow-400"></span>
             </div>
-            <h2 class="text-4xl md:text-5xl font-black text-[#001c37] mb-6">Questions <span class="text-green-500">Fréquentes</span></h2>
+            <h2 class="text-4xl md:text-5xl font-black text-[#001c37] mb-6">Questions <span class="text-yellow-400">Fréquentes</span></h2>
         </div>
 
         <div class="space-y-4">

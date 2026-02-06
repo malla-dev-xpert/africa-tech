@@ -11,13 +11,13 @@
     <!-- Content overlay -->
     <div class="relative z-10 max-w-7xl mx-auto px-4 text-center text-white fade-in">
         <div class="flex items-center justify-center gap-2 mb-6">
-            <span class="w-10 h-[2px] bg-green-500"></span>
-            <span class="uppercase text-xs font-bold tracking-[0.2em] text-green-500">Découvrez notre expertise</span>
-            <span class="w-10 h-[2px] bg-green-500"></span>
+            <span class="w-10 h-[2px] bg-yellow-400"></span>
+            <span class="uppercase text-xs font-bold tracking-[0.2em] text-yellow-400">Découvrez notre expertise</span>
+            <span class="w-10 h-[2px] bg-yellow-400"></span>
         </div>
 
         <h2 class="text-4xl md:text-6xl font-black mb-8">
-            AFRICIA TECH <span class="text-green-500">en action</span>
+            AFRICIA TECH <span class="text-yellow-400">en action</span>
         </h2>
 
         <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
@@ -33,7 +33,7 @@
                          alt="Vidéo AFRICIA TECH" 
                          class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-80 transition-opacity">
                     <div class="relative z-10 flex flex-col items-center pointer-events-none">
-                        <div class="w-24 h-24 bg-green-500 rounded-full flex items-center justify-center mb-4 group-hover:bg-green-600 transition-all shadow-lg group-hover:scale-110 transform duration-300">
+                        <div class="w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center mb-4 group-hover:bg-yellow-500 transition-all shadow-lg group-hover:scale-110 transform duration-300">
                             <svg class="w-12 h-12 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M8 5v14l11-7z" />
                             </svg>
@@ -57,7 +57,7 @@
                 <a id="video-download-btn" 
                    href="assets/videos/presentation.mp4" 
                    download="AFRICIA-TECH-presentation.mp4" 
-                   class="hidden absolute top-4 right-4 z-20 px-4 py-2 bg-green-500 hover:bg-green-600 text-white text-sm font-semibold rounded-lg shadow-lg transition-colors flex items-center gap-2">
+                   class="hidden absolute top-4 right-4 z-20 px-4 py-2 bg-yellow-400 hover:bg-yellow-500 text-white text-sm font-semibold rounded-lg shadow-lg transition-colors flex items-center gap-2">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                     </svg>
@@ -84,15 +84,15 @@
         <!-- Video description -->
         <div class="mt-12 grid md:grid-cols-3 gap-8 max-w-4xl mx-auto slide-up">
             <div class="text-center">
-                <div class="text-3xl font-black text-green-500 mb-2">100+</div>
+                <div class="text-3xl font-black text-yellow-400 mb-2">100+</div>
                 <div class="text-gray-300 text-sm">Installations réalisées</div>
             </div>
             <div class="text-center">
-                <div class="text-3xl font-black text-green-500 mb-2">5+</div>
+                <div class="text-3xl font-black text-yellow-400 mb-2">5+</div>
                 <div class="text-gray-300 text-sm">Années d'expérience</div>
             </div>
             <div class="text-center">
-                <div class="text-3xl font-black text-green-500 mb-2">24/7</div>
+                <div class="text-3xl font-black text-yellow-400 mb-2">24/7</div>
                 <div class="text-gray-300 text-sm">Support disponible</div>
             </div>
         </div>
