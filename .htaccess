@@ -1,0 +1,32 @@
+# =============================================================================
+# Africa Tech - Point d'entrée unique vers public/ (DocumentRoot = racine du projet)
+# =============================================================================
+# Si vous pouvez configurer Apache, préférez DocumentRoot = .../public/ et
+# supprimez ce fichier. Sinon ce .htaccess redirige tout vers public/.
+# =============================================================================
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Ne pas réécrire si la requête pointe déjà vers public/ (évite public/public/...)
+    RewriteCond %{REQUEST_URI} ^/public/ [NC]
+    RewriteRule ^ - [L]
+
+    # Racine du site → public/index.php
+    RewriteRule ^$ public/index.php [L]
+
+    # Toutes les autres requêtes → public/ (ex: /about.php → public/about.php)
+    RewriteRule ^(.+)$ public/$1 [L]
+</IfModule>
+
+# Si mod_rewrite est désactivé, redirection HTTP explicite vers public/
+<IfModule !mod_rewrite.c>
+    RedirectMatch 302 ^/$ /public/index.php
+    RedirectMatch 302 ^/(.*)$ /public/$1
+</IfModule>
+
+# Interdire l'accès aux fichiers sensibles à la racine (hors public/)
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>

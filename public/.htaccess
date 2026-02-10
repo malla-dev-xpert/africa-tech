@@ -1,0 +1,25 @@
+# =============================================================================
+# Africa Tech - Dossier public (front web)
+# =============================================================================
+# Ce fichier est utilisé que le DocumentRoot soit la racine du projet ou public/.
+# =============================================================================
+
+# Page d'accueil par défaut
+DirectoryIndex index.php
+
+# Pas de listing des répertoires
+Options -Indexes
+
+# Suivre les liens symboliques (souvent requis pour les assets)
+Options +FollowSymLinks
+
+# Bloquer l'accès aux fichiers sensibles (logs, .env si déplacé, etc.)
+<FilesMatch "\.(env|log|gitignore|htaccess)$">
+    Require all denied
+</FilesMatch>
+
+# Empêcher l'accès au répertoire logs/
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^logs/ - [F,L]
+</IfModule>

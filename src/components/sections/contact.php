@@ -42,7 +42,7 @@
                     </svg>
                 </div>
                 <h3 class="text-xl font-bold text-[#001c37] mb-4">Adresse</h3>
-                <p class="text-gray-600">Faladie Sema<br>Bamako - Mali</p>
+                <p class="text-gray-600">Cité BMS face à la pharmacie<br>Issaka SANOGO</p>
             </div>
         </div>
 
@@ -193,16 +193,8 @@
                         </div>
                         <div>
                             <h4 class="font-bold text-[#001c37] mb-2">Adresse complète</h4>
-                            <p class="text-gray-600 mb-1">Faladie Sema</p>
-                            <p class="text-gray-600">Bamako, Mali</p>
-                            <a 
-                                href="https://www.google.com/maps/search/?api=1&query=Faladie+Sema+Bamako+Mali" 
-                                target="_blank" 
-                                rel="noopener"
-                                class="inline-block mt-3 text-yellow-400 hover:text-yellow-500 font-semibold text-sm transition-colors"
-                            >
-                                Ouvrir dans Google Maps →
-                            </a>
+                            <p class="text-gray-600 mb-1">Cité BMS face à la pharmacie</p>
+                            <p class="text-gray-600">Issaka SANOGO</p>
                         </div>
                     </div>
                 </div>
