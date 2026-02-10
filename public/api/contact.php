@@ -2,6 +2,7 @@
 /**
  * Contact Form Handler
  * Handles form submissions from the contact form
+ * Rate limit: 3 submissions per 15 minutes per IP
  */
 
 header('Content-Type: application/json');
@@ -16,8 +17,65 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
+// --- Rate limiting (3 requêtes / 15 min / IP) ---
+$rateLimitWindow = 900;   // 15 minutes en secondes
+$rateLimitMax = 3;
+$clientIp = isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? trim(explode(',', $_SERVER['HTTP_X_FORWARDED_FOR'])[0]) : ($_SERVER['HTTP_X_REAL_IP'] ?? $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0');
+$rateLimitFile = __DIR__ . '/../logs/contact_rate_limit.json';
+
+$now = time();
+$data = [];
+if (file_exists($rateLimitFile)) {
+    $raw = @file_get_contents($rateLimitFile);
+    if ($raw !== false) {
+        $decoded = json_decode($raw, true);
+        if (is_array($decoded)) {
+            $data = $decoded;
+        }
+    }
+}
+
+if (!isset($data[$clientIp])) {
+    $data[$clientIp] = [];
+}
+// Garder seulement les timestamps dans la fenêtre
+$data[$clientIp] = array_values(array_filter($data[$clientIp], function ($ts) use ($now, $rateLimitWindow) {
+    return ($now - $ts) < $rateLimitWindow;
+}));
+
+if (count($data[$clientIp]) >= $rateLimitMax) {
+    http_response_code(429);
+    header('Retry-After: ' . $rateLimitWindow);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Trop de demandes. Veuillez réessayer dans 15 minutes ou nous contacter par téléphone / WhatsApp.'
+    ]);
+    exit;
+}
+
+$data[$clientIp][] = $now;
+$logDir = dirname($rateLimitFile);
+if (is_dir($logDir) && is_writable($logDir)) {
+    $fp = @fopen($rateLimitFile, 'c+');
+    if ($fp && flock($fp, LOCK_EX)) {
+        ftruncate($fp, 0);
+        fwrite($fp, json_encode($data));
+        flock($fp, LOCK_UN);
+        fclose($fp);
+    }
+}
+// --- Fin rate limiting ---
+
 // Get JSON input
-$input = json_decode(file_get_contents('php://input'), true);
+$rawInput = file_get_contents('php://input');
+$input = json_decode($rawInput, true);
+
+// Ensure input is an array (invalid or empty JSON)
+if (!is_array($input)) {
+    http_response_code(400);
+    echo json_encode(['success' => false, 'message' => 'Données invalides.', 'errors' => ['Le format de la requête est invalide.']]);
+    exit;
+}
 
 // Validate required fields
 $required = ['name', 'email', 'subject', 'message'];
@@ -37,7 +95,7 @@ if (!empty($input['email']) && !filter_var($input['email'], FILTER_VALIDATE_EMAI
 // If there are errors, return them
 if (!empty($errors)) {
     http_response_code(400);
-    echo json_encode(['success' => false, 'errors' => $errors]);
+    echo json_encode(['success' => false, 'message' => implode(' ', $errors), 'errors' => $errors]);
     exit;
 }
 
@@ -66,14 +124,15 @@ $message
 Ce message a été envoyé depuis le formulaire de contact du site web.
 ";
 
+// From = adresse fixe (meilleure délivrabilité) ; Reply-To = visiteur pour répondre
+$fromEmail = 'ouroayat@gmail.com';
 $headers = [
-    'From: ' . $email,
+    'From: AFRICIA TECH <' . $fromEmail . '>',
     'Reply-To: ' . $email,
     'X-Mailer: PHP/' . phpversion(),
     'Content-Type: text/plain; charset=UTF-8'
 ];
 
-// Send email
 $mailSent = @mail($to, $emailSubject, $emailBody, implode("\r\n", $headers));
 
 if ($mailSent) {

@@ -153,10 +153,10 @@
 
                     <div id="form-error" class="hidden p-4 bg-red-50 border border-red-200 rounded-lg">
                         <p class="text-red-800 font-semibold flex items-center gap-2">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
                             </svg>
-                            Une erreur s'est produite. Veuillez réessayer ou nous contacter directement.
+                            <span id="form-error-text">Une erreur s'est produite. Veuillez réessayer ou nous contacter directement.</span>
                         </p>
                     </div>
                 </form>
@@ -315,7 +315,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const result = await response.json();
             
             if (!response.ok || !result.success) {
-                throw new Error(result.message || 'Erreur serveur');
+                const msg = result.message || (Array.isArray(result.errors) ? result.errors.join(' ') : 'Erreur serveur');
+                const errText = document.getElementById('form-error-text');
+                if (errText) errText.textContent = msg;
+                formError.classList.remove('hidden');
+                formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                return;
             }
 
             // Success
@@ -338,6 +343,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         } catch (error) {
             console.error('Form submission error:', error);
+            const errText = document.getElementById('form-error-text');
+            if (errText) errText.textContent = 'Une erreur réseau s\'est produite. Veuillez réessayer ou nous contacter directement.';
             formError.classList.remove('hidden');
             formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         } finally {
