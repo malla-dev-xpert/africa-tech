@@ -53,7 +53,7 @@
                 <h3 class="text-3xl font-black text-[#001c37] mb-6">Envoyez-nous un message</h3>
                 <p class="text-gray-600 mb-8">Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
                 
-                <form id="contact-form" class="space-y-6">
+                <form id="contact-form" method="post" action="" class="space-y-6">
                     <div>
                         <label for="name" class="block text-sm font-bold text-[#001c37] mb-2">
                             Nom complet <span class="text-red-500">*</span>
