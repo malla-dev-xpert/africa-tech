@@ -9,7 +9,7 @@ require __DIR__ . '/../layouts/main.php';
 <section class="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0 z-0">
         <img 
-            src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+            src="../assets/images/service-hero.jpeg" 
             alt="Services AFRICIA TECH" 
             class="w-full h-full object-cover"
         >

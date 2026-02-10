@@ -4,11 +4,11 @@
         <div class="text-center mb-16 slide-up">
             <div class="flex items-center justify-center gap-2 mb-4">
                 <span class="w-10 h-[2px] bg-yellow-400"></span>
-                <span class="uppercase text-xs font-bold tracking-[0.2em] text-yellow-400">Formations</span>
+                <span class="uppercase text-xs font-bold tracking-[0.2em] text-yellow-400"><?= isset($formationsSectionBadge) ? htmlspecialchars($formationsSectionBadge) : 'Formations' ?></span>
                 <span class="w-10 h-[2px] bg-yellow-400"></span>
             </div>
-            <h2 class="text-4xl md:text-6xl font-black text-[#001c37] mb-6">Formation <span class="text-yellow-400">Professionnelle</span></h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">Développez vos compétences dans les énergies renouvelables et l'électricité</p>
+            <h2 class="text-4xl md:text-6xl font-black text-[#001c37] mb-6"><?php if (isset($formationsSectionTitle)): ?><?= htmlspecialchars($formationsSectionTitle) ?><?php else: ?>Formation <span class="text-yellow-400">Professionnelle</span><?php endif; ?></h2>
+            <p class="text-gray-600 max-w-2xl mx-auto"><?= isset($formationsSectionSubtitle) ? htmlspecialchars($formationsSectionSubtitle) : 'Développez vos compétences dans les énergies renouvelables et l\'électricité' ?></p>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8">

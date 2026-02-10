@@ -4,11 +4,11 @@
         <div class="text-center mb-16 slide-up">
             <div class="flex items-center justify-center gap-2 mb-4">
                 <span class="w-10 h-[2px] bg-yellow-400"></span>
-                <span class="uppercase text-xs font-bold tracking-[0.2em] text-yellow-400">Contact</span>
+                <span class="uppercase text-xs font-bold tracking-[0.2em] text-yellow-400"><?= isset($contactSectionBadge) ? htmlspecialchars($contactSectionBadge) : 'Contact' ?></span>
                 <span class="w-10 h-[2px] bg-yellow-400"></span>
             </div>
-            <h2 class="text-4xl md:text-6xl font-black text-[#001c37] mb-6">Contactez-<span class="text-yellow-400">nous</span></h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">Notre équipe est disponible pour répondre à toutes vos questions</p>
+            <h2 class="text-4xl md:text-6xl font-black text-[#001c37] mb-6"><?php if (isset($contactSectionTitle)): ?><?= htmlspecialchars($contactSectionTitle) ?><?php else: ?>Contactez-<span class="text-yellow-400">nous</span><?php endif; ?></h2>
+            <p class="text-gray-600 max-w-2xl mx-auto"><?= isset($contactSectionSubtitle) ? htmlspecialchars($contactSectionSubtitle) : 'Notre équipe est disponible pour répondre à toutes vos questions' ?></p>
         </div>
 
         <!-- Contact Info Cards -->

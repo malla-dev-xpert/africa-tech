@@ -45,7 +45,7 @@ require __DIR__ . '/../layouts/main.php';
 <section class="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0 z-0">
         <img 
-            src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+            src="../assets/images/video-bg.jpeg" 
             alt="Produits solaires AFRICIA TECH" 
             class="w-full h-full object-cover"
         >
@@ -62,6 +62,12 @@ require __DIR__ . '/../layouts/main.php';
     </div>
 </section>
 
+<?php
+// Titres distincts du hero pour la section produits
+$productsSectionBadge = 'Notre catalogue';
+$productsSectionTitle = 'Équipements et solutions';
+$productsSectionSubtitle = 'Panneaux, batteries, onduleurs et accessoires pour vos projets';
+?>
 <!-- Products Section Component -->
 <?php require __DIR__ . '/../components/sections/products.php'; ?>
 

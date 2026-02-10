@@ -13,11 +13,11 @@ $whatsappBase = 'https://wa.me/22395205556?text=' . rawurlencode('Bonjour. Je su
         <div class="text-center mb-16 slide-up">
             <div class="flex items-center justify-center gap-2 mb-4">
                 <span class="w-10 h-[2px] bg-yellow-400"></span>
-                <span class="uppercase text-xs font-bold tracking-[0.2em] text-yellow-400">Nos produits</span>
+                <span class="uppercase text-xs font-bold tracking-[0.2em] text-yellow-400"><?= isset($productsSectionBadge) ? htmlspecialchars($productsSectionBadge) : 'Nos produits' ?></span>
                 <span class="w-10 h-[2px] bg-yellow-400"></span>
             </div>
-            <h2 class="text-4xl md:text-6xl font-black text-[#001c37] mb-6">Nos <span class="text-yellow-400">Produits</span></h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">Équipements de qualité pour vos projets énergétiques</p>
+            <h2 class="text-4xl md:text-6xl font-black text-[#001c37] mb-6"><?php if (isset($productsSectionTitle)): ?><?= htmlspecialchars($productsSectionTitle) ?><?php else: ?>Nos <span class="text-yellow-400">Produits</span><?php endif; ?></h2>
+            <p class="text-gray-600 max-w-2xl mx-auto"><?= isset($productsSectionSubtitle) ? htmlspecialchars($productsSectionSubtitle) : 'Équipements de qualité pour vos projets énergétiques' ?></p>
         </div>
 
         <?php if ($showFilters): ?>

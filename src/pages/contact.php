@@ -26,6 +26,12 @@ require __DIR__ . '/../layouts/main.php';
     </div>
 </section>
 
+<?php
+// Titres distincts du hero pour la section contact
+$contactSectionBadge = 'Comment nous joindre';
+$contactSectionTitle = 'Coordonnées et formulaire';
+$contactSectionSubtitle = 'Téléphone, email, adresse ou envoyez-nous un message';
+?>
 <!-- Contact Section Component -->
 <?php require __DIR__ . '/../components/sections/contact.php'; ?>
 

@@ -9,7 +9,7 @@ require __DIR__ . '/../layouts/main.php';
 <section class="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0 z-0">
         <img 
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+            src="../assets/images/laanding-video-thumbail.jpeg" 
             alt="Formations AFRICIA TECH" 
             class="w-full h-full object-cover"
         >
@@ -26,6 +26,12 @@ require __DIR__ . '/../layouts/main.php';
     </div>
 </section>
 
+<?php
+// Titres distincts du hero pour la section formations
+$formationsSectionBadge = 'Nos parcours';
+$formationsSectionTitle = 'Choisissez votre formation';
+$formationsSectionSubtitle = 'Installation solaire ou électricité bâtiment : une certification reconnue à la clé';
+?>
 <!-- Formations Section Component -->
 <?php require __DIR__ . '/../components/sections/formations.php'; ?>
 
