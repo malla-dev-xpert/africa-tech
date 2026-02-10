@@ -20,8 +20,8 @@
                     </svg>
                 </div>
                 <h3 class="text-xl font-bold text-[#001c37] mb-4">Téléphone</h3>
-                <p class="text-gray-600 mb-2">+223 70 70 70 70</p>
-                <p class="text-gray-600">+223 20 20 20 20</p>
+                <p class="text-gray-600 mb-2">+223 95 20 55 56</p>
+                <p class="text-gray-600">+223 74 91 71 50</p>
             </div>
 
             <div class="text-center p-8 bg-gray-50 rounded-lg slide-up">
@@ -334,7 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
             //     `Sujet: ${formData.subject}\n\n` +
             //     `Message: ${formData.message}`
             // );
-            // window.open(`https://wa.me/22370707070?text=${whatsappMessage}`, '_blank');
+            // window.open(`https://wa.me/22395205556?text=${whatsappMessage}`, '_blank');
 
         } catch (error) {
             console.error('Form submission error:', error);

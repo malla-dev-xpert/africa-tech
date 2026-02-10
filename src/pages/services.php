@@ -26,8 +26,132 @@ require __DIR__ . '/../layouts/main.php';
     </div>
 </section>
 
-<!-- Services Section Component -->
-<?php require __DIR__ . '/../components/sections/services.php'; ?>
+<!-- Services List Section - Fond blanc, design moderne -->
+<section class="py-24 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4">
+        <!-- En-tête -->
+        <div class="text-center mb-20">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#001c37]/5 border border-[#001c37]/10 mb-6">
+                <span class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
+                <span class="uppercase text-xs font-bold tracking-[0.2em] text-[#001c37]">Ce que nous proposons</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-black text-[#001c37] mb-5">Nos domaines <span class="text-yellow-400 relative"><span class="relative z-10">d'expertise</span><span class="absolute bottom-1 left-0 w-full h-3 bg-yellow-400/30 -z-0"></span></span></h2>
+            <p class="text-gray-600 max-w-2xl mx-auto text-lg">De l'énergie solaire au forage, une expertise reconnue pour accompagner chaque projet</p>
+        </div>
+
+        <!-- Grille des services -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Service 1: Installation solaire -->
+            <article class="group relative bg-white rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-xl hover:border-yellow-400/30 transition-all duration-300 overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-yellow-400/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative">
+                    <div class="w-14 h-14 rounded-xl bg-[#001c37] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#001c37] mb-3">Installation solaire</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed text-sm">Installation complète de systèmes photovoltaïques pour particuliers et entreprises. Étude, dimensionnement et installation sur mesure.</p>
+                    <a href="https://wa.me/22395205556?text=Bonjour.%20Je%20suis%20int%C3%A9ress%C3%A9%20par%20l%27installation%20solaire%20pour%20en%20savoir%20plus." target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#001c37] text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#001c37]/90 hover:gap-3 transition-all">
+                        Demander un devis
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Service 2: Électricité bâtiment -->
+            <article class="group relative bg-white rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-xl hover:border-yellow-400/30 transition-all duration-300 overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-yellow-400/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative">
+                    <div class="w-14 h-14 rounded-xl bg-[#001c37] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#001c37] mb-3">Électricité bâtiment</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed text-sm">Installation électrique complète pour maisons, bureaux et bâtiments industriels. Conformité aux normes en vigueur.</p>
+                    <a href="https://wa.me/22395205556?text=Bonjour.%20Je%20suis%20int%C3%A9ress%C3%A9%20par%20l%27%C3%A9lectricit%C3%A9%20b%C3%A2timent%20pour%20en%20savoir%20plus." target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#001c37] text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#001c37]/90 hover:gap-3 transition-all">
+                        Demander un devis
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Service 3: Climatisation -->
+            <article class="group relative bg-white rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-xl hover:border-yellow-400/30 transition-all duration-300 overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-yellow-400/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative">
+                    <div class="w-14 h-14 rounded-xl bg-[#001c37] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#001c37] mb-3">Climatisation</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed text-sm">Installation et maintenance de systèmes de climatisation adaptés au climat malien. Solutions économes en énergie.</p>
+                    <a href="https://wa.me/22395205556?text=Bonjour.%20Je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20climatisation%20pour%20en%20savoir%20plus." target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#001c37] text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#001c37]/90 hover:gap-3 transition-all">
+                        Demander un devis
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Service 4: Maintenance -->
+            <article class="group relative bg-white rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-xl hover:border-yellow-400/30 transition-all duration-300 overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-yellow-400/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative">
+                    <div class="w-14 h-14 rounded-xl bg-[#001c37] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#001c37] mb-3">Maintenance</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed text-sm">Maintenance préventive et corrective de vos installations solaires et électriques. Intervention rapide et efficace.</p>
+                    <a href="https://wa.me/22395205556?text=Bonjour.%20Je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20maintenance%20pour%20en%20savoir%20plus." target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#001c37] text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#001c37]/90 hover:gap-3 transition-all">
+                        Demander un devis
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Service 5: Domotique -->
+            <article class="group relative bg-white rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-xl hover:border-yellow-400/30 transition-all duration-300 overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-yellow-400/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative">
+                    <div class="w-14 h-14 rounded-xl bg-[#001c37] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#001c37] mb-3">Domotique</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed text-sm">Automatisation et contrôle intelligent de votre habitat. Éclairage, sécurité, climatisation et énergie connectés.</p>
+                    <a href="https://wa.me/22395205556?text=Bonjour.%20Je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20domotique%20pour%20en%20savoir%20plus." target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#001c37] text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#001c37]/90 hover:gap-3 transition-all">
+                        Demander un devis
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Service 6: Forage -->
+            <article class="group relative bg-white rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-xl hover:border-yellow-400/30 transition-all duration-300 overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-yellow-400/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative">
+                    <div class="w-14 h-14 rounded-xl bg-[#001c37] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#001c37] mb-3">Forage</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed text-sm">Forage de puits et installation de pompes solaires pour l'accès à l'eau. Solutions autonomes et durables.</p>
+                    <a href="https://wa.me/22395205556?text=Bonjour.%20Je%20suis%20int%C3%A9ress%C3%A9%20par%20le%20forage%20pour%20en%20savoir%20plus." target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#001c37] text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#001c37]/90 hover:gap-3 transition-all">
+                        Demander un devis
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
 
 <!-- Process Section -->
 <section class="py-20 bg-white">
@@ -92,6 +216,8 @@ require __DIR__ . '/../layouts/main.php';
         </div>
     </div>
 </section>
+
+
 
 <!-- Advantages Section -->
 <section class="py-20 bg-gray-50">
@@ -180,9 +306,6 @@ require __DIR__ . '/../layouts/main.php';
         </div>
     </div>
 </section>
-
-<!-- Why Choose Us Section Component -->
-<?php require __DIR__ . '/../components/sections/why-choose-us.php'; ?>
 
 <!-- CTA Final Section Component -->
 <?php require __DIR__ . '/../components/sections/cta-final.php'; ?>

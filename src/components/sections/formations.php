@@ -33,7 +33,7 @@
                         <span class="text-yellow-400">✓</span> Opportunités d'emploi
                     </li>
                 </ul>
-                <a href="https://wa.me/22370707070?text=Bonjour,%20je%20suis%20intéressé%20par%20la%20formation%20installation%20solaire" target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all">
+                <a href="https://wa.me/22395205556?text=Bonjour,%20je%20suis%20intéressé%20par%20la%20formation%20installation%20solaire" target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all">
                     S'inscrire maintenant
                 </a>
             </div>
@@ -60,7 +60,7 @@
                         <span class="text-yellow-400">✓</span> Accompagnement personnalisé
                     </li>
                 </ul>
-                <a href="https://wa.me/22370707070?text=Bonjour,%20je%20suis%20intéressé%20par%20la%20formation%20électricité%20bâtiment" target="_blank" rel="noopener" class="inline-block bg-[#001c37] text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-400 transition-all">
+                <a href="https://wa.me/22395205556?text=Bonjour,%20je%20suis%20intéressé%20par%20la%20formation%20électricité%20bâtiment" target="_blank" rel="noopener" class="inline-block bg-[#001c37] text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-400 transition-all">
                     S'inscrire maintenant
                 </a>
             </div>
