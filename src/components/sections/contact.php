@@ -31,7 +31,7 @@
                     </svg>
                 </div>
                 <h3 class="text-xl font-bold text-[#001c37] mb-4">Email</h3>
-                <p class="text-gray-600">ouroayat@gmail.com</p>
+                <p class="text-gray-600">africatech@gmail.com</p>
             </div>
 
             <div class="text-center p-8 bg-gray-50 rounded-lg slide-up">

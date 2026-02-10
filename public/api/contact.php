@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Contact Form Handler
  * Envoi d'emails via mail() natif PHP - sans dépendances externes.
@@ -137,14 +138,14 @@ $safeEmail = preg_replace('/[\x00-\x1F\x7F\r\n]/', '', $email);
 $safeName = preg_replace('/[\x00-\x1F\x7F\r\n]/', '', $name);
 $safeSubject = preg_replace('/[\x00-\x1F\x7F\r\n]/', '', $subjectLabel);
 
-$to = 'ouroayat@gmail.com';
+$to = 'africatech@gmail.com';
 $emailSubject = 'Nouveau message de contact - ' . $safeSubject;
 
 // Template HTML email professionnel (structure table pour compatibilité clients mail)
 $emailBody = getEmailTemplate($safeName, $safeEmail, $phone, $safeSubject, $message);
 
 // Adresses fixes pour From (délivrabilité)
-$fromEmail = 'ouroayat@gmail.com';
+$fromEmail = 'africatech@gmail.com';
 $headers = [
     'MIME-Version: 1.0',
     'Content-Type: text/html; charset=UTF-8',
