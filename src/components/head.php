@@ -20,6 +20,10 @@ $faviconUrl = $baseUrl . '/assets/images/faveicon.png';
 ?>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<?php if (!empty($currentPage) && $currentPage === 'accueil'): ?>
+<link rel="preload" href="<?= ($basePath ? $basePath . '/' : '/') ?>assets/images/hero.jpeg" as="image" />
+<?php endif; ?>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 <meta name="description" content="<?= $pageDescription ?>" />
 <meta name="robots" content="<?= htmlspecialchars($metaRobots) ?>" />
 <title><?= $pageTitle ?></title>
@@ -51,9 +55,10 @@ $faviconUrl = $baseUrl . '/assets/images/faveicon.png';
 <meta name="twitter:description" content="<?= $ogDescription ?>" />
 <meta name="twitter:image" content="<?= htmlspecialchars($ogImage) ?>" />
 
-<!-- Styles & Tailwind -->
+<!-- Styles & Tailwind (preload CSS pour éviter le blocage du rendu) -->
+<link rel="preload" href="<?= ($basePath ? $basePath . '/' : '/') ?>assets/css/animations.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="<?= ($basePath ? $basePath . '/' : '/') ?>assets/css/animations.css" /></noscript>
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<link rel="stylesheet" href="<?= ($basePath ? $basePath . '/' : '/') ?>assets/css/animations.css">
 
 <?php
 // JSON-LD Organization / LocalBusiness (SEO structuré)

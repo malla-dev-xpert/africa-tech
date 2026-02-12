@@ -11,6 +11,8 @@ require __DIR__ . '/../layouts/main.php';
         <img 
             src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
             alt="Équipe AFRICIA TECH" 
+            width="2000" 
+            height="1333"
             class="w-full h-full object-cover"
         >
         <div class="absolute inset-0 bg-gradient-to-r from-[#001c37]/90 via-[#001c37]/80 to-[#001c37]/70"></div>

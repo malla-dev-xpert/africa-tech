@@ -40,7 +40,7 @@ $whatsappBase = 'https://wa.me/22395205556?text=' . rawurlencode('Bonjour. Je su
                        placeholder="—" min="0" step="1000"
                        class="w-full rounded-xl border border-gray-300 px-4 py-2.5 focus:ring-2 focus:ring-yellow-400 outline-none" />
             </div>
-            <button type="submit" class="px-5 py-2.5 bg-[#001c37] text-white font-bold rounded-xl hover:bg-yellow-500 hover:text-[#001c37] transition-colors duration-300">
+            <button type="submit" class="px-5 py-2.5 bg-[#001c37] text-white font-bold rounded-xl hover:bg-yellow-500 hover:text-[#001c37] transition-colors duration-300" aria-label="Appliquer les filtres de recherche">
                 Filtrer
             </button>
             <?php if (!empty($_GET['q']) || isset($_GET['min_price']) && $_GET['min_price'] !== '' || isset($_GET['max_price']) && $_GET['max_price'] !== ''): ?>
@@ -67,7 +67,7 @@ $whatsappBase = 'https://wa.me/22395205556?text=' . rawurlencode('Bonjour. Je su
                 <article class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col slide-up border border-gray-100 hover:border-yellow-400/30">
                     <div class="relative h-44 overflow-hidden bg-gradient-to-br from-[#001c37] to-[#003366]">
                         <?php $imgUrl = !empty($p['imageUrl']) ? '/' . ltrim($p['imageUrl'], '/') : 'https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?w=800&q=80'; ?>
-                        <img src="<?= htmlspecialchars($imgUrl) ?>" alt="<?= htmlspecialchars($p['name'] ?? '') ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <img src="<?= htmlspecialchars($imgUrl) ?>" alt="<?= htmlspecialchars($p['name'] ?? '') ?>" width="400" height="280" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     </div>
                     <div class="p-5 flex flex-col flex-1">

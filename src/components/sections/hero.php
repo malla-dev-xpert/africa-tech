@@ -4,6 +4,9 @@
         <!-- Real image from Unsplash - Solar panels installation -->
         <img src="../assets/images/hero.jpeg" 
              alt="Installation de panneaux solaires AFRICIA TECH" 
+             width="1920" 
+             height="1080"
+             fetchpriority="high"
              class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-gradient-to-r from-[#001c37] via-[#001c37]/80 to-transparent"></div>
     </div>
@@ -19,7 +22,7 @@
             commence ici.
         </h1>
 
-        <p class="text-gray-300 text-lg md:text-xl max-w-2xl mb-12">
+        <p class="text-gray-200 text-lg md:text-xl max-w-2xl mb-12">
             AFRICIA TECH vous accompagne vers l'autonomie énergétique avec des solutions solaires fiables, durables et adaptées. De l'installation à la maintenance, nous sommes votre partenaire de confiance au Mali.
         </p>
 

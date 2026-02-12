@@ -4,7 +4,7 @@
             <!-- Présentation AFRICIA TECH -->
             <div>
                 <div class="flex items-center gap-2 mb-6">
-                    <img src="assets/images/logo.png" alt="AFRICIA TECH" class="h-10 w-auto object-contain">
+                    <img src="assets/images/logo.png" alt="AFRICIA TECH" width="160" height="40" class="h-10 w-auto object-contain">
                 </div>
                 <p class="text-gray-400 mb-6 leading-relaxed">
                     Votre partenaire de confiance pour l'indépendance énergétique au Mali. Solutions solaires, électricité, domotique et formations professionnelles.

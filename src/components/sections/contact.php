@@ -137,6 +137,7 @@
                         type="submit" 
                         id="submit-btn"
                         class="w-full bg-yellow-400 text-white px-8 py-4 rounded-lg font-bold uppercase text-sm hover:bg-yellow-500 transition-all shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
+                        aria-label="Envoyer le formulaire de contact"
                     >
                         <span id="submit-text">Envoyer le message</span>
                         <span id="submit-loading" class="hidden">Envoi en cours...</span>

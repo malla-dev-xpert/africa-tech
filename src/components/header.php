@@ -34,7 +34,7 @@
 <header class="bg-[#001c37]/90 backdrop-blur-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         <a href="index.php" class="flex items-center gap-2 hover:opacity-90 transition-opacity">
-            <img src="assets/images/logo.png" alt="AFRICIA TECH" class="h-10 w-auto object-contain">
+            <img src="assets/images/logo.png" alt="AFRICIA TECH" width="160" height="40" class="h-10 w-auto object-contain">
         </a>
 
         <nav class="hidden lg:flex items-center gap-8 text-white font-semibold text-sm">
@@ -52,14 +52,14 @@
                     <path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
                 </svg>
                 <div class="text-right">
-                    <p class="text-[10px] text-gray-400 uppercase">Appelez-nous</p>
+                    <p class="text-[10px] text-gray-200 uppercase">Appelez-nous</p>
                     <p class="font-bold text-sm">+223 95 20 55 56</p>
                 </div>
             </div>
         </div>
 
-        <button id="menu-btn" class="lg:hidden text-white">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button id="menu-btn" type="button" class="lg:hidden text-white" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="mobile-menu">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M4 6h16M4 12h16m-7 6h7"></path>
             </svg>
         </button>
@@ -70,7 +70,7 @@
 <!-- Fixed positioning requires the element to be positioned relative to viewport, not parent container -->
 <div id="mobile-menu" class="fixed inset-0 bg-[#001c37] z-[100] flex flex-col translate-x-full transition-transform duration-500 ease-in-out">
     <!-- Close button -->
-    <button id="close-btn" class="absolute top-6 right-6 text-5xl text-white z-10">&times;</button>
+    <button id="close-btn" type="button" class="absolute top-6 right-6 text-5xl text-white z-10" aria-label="Fermer le menu">&times;</button>
 
     <!-- Navigation links - centered vertically -->
     <nav class="flex-1 flex flex-col items-center justify-center gap-8 text-2xl text-white">

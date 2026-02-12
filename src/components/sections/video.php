@@ -4,6 +4,8 @@
     <div class="absolute inset-0 parallax">
         <img src="../assets/images/video-bg.jpeg" 
              alt="Installation solaire en cours" 
+             width="1920" 
+             height="1080"
              class="w-full h-full object-cover" 
              loading="lazy">
         <div class="absolute inset-0 bg-gradient-to-r from-[#001c37]/90 via-[#001c37]/80 to-[#001c37]/90"></div>
@@ -21,7 +23,7 @@
             AFRICIA TECH <span class="text-yellow-400">en action</span>
         </h2>
 
-        <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+        <p class="text-xl text-gray-200 mb-12 max-w-3xl mx-auto">
             Découvrez nos réalisations et notre savoir-faire à travers cette vidéo présentant nos installations solaires et notre expertise technique.
         </p>
 
@@ -32,6 +34,8 @@
                 <div id="video-poster" class="absolute inset-0 z-10 flex flex-col items-center justify-center cursor-pointer">
                     <img src="assets/images/laanding-video-thumbail.jpeg" 
                          alt="Vidéo de présentation AFRICIA TECH - installations solaires" 
+                         width="1280" 
+                         height="720"
                          class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-80 transition-opacity"
                          loading="lazy">
                     <div class="relative z-10 flex flex-col items-center pointer-events-none">
@@ -51,7 +55,9 @@
                        controls 
                        controlsList="nodownload"
                        playsinline
-                       preload="metadata">
+                       preload="metadata"
+                       title="Vidéo de présentation AFRICIA TECH">
+                    <track kind="captions" src="assets/videos/captions.vtt" srclang="fr" label="Français" default />
                     Votre navigateur ne prend pas en charge la lecture de vidéos.
                 </video>
 

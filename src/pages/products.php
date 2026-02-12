@@ -66,6 +66,8 @@ require __DIR__ . '/../layouts/main.php';
         <img 
             src="../assets/images/video-bg.jpeg" 
             alt="Produits solaires AFRICIA TECH" 
+            width="1920" 
+            height="1080"
             class="w-full h-full object-cover"
         >
         <div class="absolute inset-0 bg-gradient-to-r from-[#001c37]/90 via-[#001c37]/80 to-[#001c37]/70"></div>

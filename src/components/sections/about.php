@@ -16,6 +16,8 @@
                         <img 
                             src="../assets/images/landing-about.jpeg" 
                             alt="Équipe AFRICIA TECH - Installation de panneaux solaires" 
+                            width="800" 
+                            height="600"
                             class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
                             loading="lazy"
                         >

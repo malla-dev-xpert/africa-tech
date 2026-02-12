@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
       
       // Show menu by removing translate-x-full class
       mobileMenu.classList.remove("translate-x-full");
+      menuBtn.setAttribute("aria-expanded", "true");
       
       // Prevent body scroll when menu is open
       // Use both overflow and position to handle all mobile browsers
@@ -27,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeMenu = () => {
       // Hide menu by adding translate-x-full class
       mobileMenu.classList.add("translate-x-full");
+      menuBtn.setAttribute("aria-expanded", "false");
       
       // Restore body scroll
       document.body.style.overflow = "";

@@ -239,10 +239,10 @@ if (isset($_GET['deleted']) && $_GET['deleted'] === '1') {
                 <h2 class="text-2xl font-bold text-[#001c37]">Liste des produits (<?= $totalProducts ?>)</h2>
                 <div class="flex items-center gap-2">
                     <span class="text-sm text-gray-600">Affichage :</span>
-                    <button type="button" id="view-grid" aria-pressed="true" class="p-2 rounded-lg bg-yellow-100 text-yellow-700 hover:bg-yellow-200 transition-colors" title="Grille">
+                    <button type="button" id="view-grid" aria-pressed="true" aria-label="Affichage en grille" class="p-2 rounded-lg bg-yellow-100 text-yellow-700 hover:bg-yellow-200 transition-colors" title="Grille">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
                     </button>
-                    <button type="button" id="view-list" aria-pressed="false" class="p-2 rounded-lg bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors" title="Liste">
+                    <button type="button" id="view-list" aria-pressed="false" aria-label="Affichage en liste" class="p-2 rounded-lg bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors" title="Liste">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
                     </button>
                 </div>
