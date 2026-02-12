@@ -34,6 +34,25 @@ try {
         }
         $products = $filtered;
     }
+
+    // --- Logic for Open Graph Tags (WhatsApp Preview) ---
+    if (isset($_GET['product_id']) && !empty($_GET['product_id'])) {
+        $prodId = (int) $_GET['product_id'];
+        $stmtSingle = $pdo->prepare("SELECT name, description, imageUrl FROM products WHERE id = ?");
+        $stmtSingle->execute([$prodId]);
+        $singleProduct = $stmtSingle->fetch(PDO::FETCH_ASSOC);
+
+        if ($singleProduct) {
+            $ogTitle = $singleProduct['name'] . ' - ' . ($singleProduct['price'] ?? '');
+            $ogDescription = mb_strimwidth($singleProduct['description'], 0, 150, "...");
+            $ogImage = 'https://' . $_SERVER['HTTP_HOST'] . '/' . ltrim($singleProduct['imageUrl'], '/');
+            $ogUrl = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+            
+            // Override page title for better browser tab context
+            $pageTitle = $singleProduct['name'] . ' - AFRICIA TECH';
+        }
+    }
+
 } catch (Throwable $e) {
     $products = [];
 }

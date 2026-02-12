@@ -3,8 +3,9 @@
     <!-- Background image -->
     <div class="absolute inset-0">
         <img src="../assets/images/final-cta.jpeg" 
-             alt="" 
-             class="w-full h-full object-cover">
+             alt="AFRICIA TECH - Prêt à passer à l'énergie solaire" 
+             class="w-full h-full object-cover" 
+             loading="lazy">
         <div class="absolute inset-0 bg-gradient-to-r from-[#001c37]/90 via-[#001c37]/85 to-[#003366]/90"></div>
     </div>
     <!-- Content -->

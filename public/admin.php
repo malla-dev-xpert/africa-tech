@@ -152,7 +152,10 @@ if (isset($_GET['deleted']) && $_GET['deleted'] === '1') {
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
     <title>Administration Produits – AFRICIA TECH</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/faveicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/faveicon.png" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="bg-slate-50 text-gray-800 min-h-screen font-sans">

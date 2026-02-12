@@ -60,7 +60,9 @@ $whatsappBase = 'https://wa.me/22395205556?text=' . rawurlencode('Bonjour. Je su
         <?php else: ?>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 <?php foreach ($products as $p): 
-                    $waText = rawurlencode('Bonjour. Je suis intéressé par ' . ($p['name'] ?? '') . ' pour en savoir plus.');
+                    $prodUrl = 'https://' . $_SERVER['HTTP_HOST'] . '/products.php?product_id=' . $p['id'];
+                    $waMessage = "Bonjour. Je suis intéressé par " . ($p['name'] ?? '') . " (" . ($p['price'] ?? '') . ").\n\nVoici le lien du produit : " . $prodUrl;
+                    $waLink = "https://wa.me/22395205556?text=" . rawurlencode($waMessage);
                 ?>
                 <article class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col slide-up border border-gray-100 hover:border-yellow-400/30">
                     <div class="relative h-44 overflow-hidden bg-gradient-to-br from-[#001c37] to-[#003366]">
@@ -72,7 +74,7 @@ $whatsappBase = 'https://wa.me/22395205556?text=' . rawurlencode('Bonjour. Je su
                         <h3 class="text-lg font-bold text-[#001c37] mb-2"><?= htmlspecialchars($p['name'] ?? '') ?></h3>
                         <p class="text-sm text-gray-500 mb-4 flex-1 line-clamp-2"><?= htmlspecialchars($p['description'] ?? '') ?></p>
                         <p class="text-xl font-black text-yellow-500 mb-4"><?= htmlspecialchars($p['price'] ?? '') ?></p>
-                        <a href="https://wa.me/22395205556?text=<?= $waText ?>" target="_blank" rel="noopener" class="block w-full bg-[#001c37] text-white py-3.5 rounded-xl font-bold text-sm hover:bg-yellow-400 hover:text-[#001c37] transition-all duration-300 text-center">
+                        <a href="<?= htmlspecialchars($waLink) ?>" target="_blank" rel="noopener" class="block w-full bg-[#001c37] text-white py-3.5 rounded-xl font-bold text-sm hover:bg-yellow-400 hover:text-[#001c37] transition-all duration-300 text-center">
                             Je suis intéressé
                         </a>
                     </div>

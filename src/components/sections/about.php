@@ -17,6 +17,7 @@
                             src="../assets/images/landing-about.jpeg" 
                             alt="Équipe AFRICIA TECH - Installation de panneaux solaires" 
                             class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                            loading="lazy"
                         >
                         <!-- Overlay gradient with hover effect -->
                         <div class="absolute inset-0 bg-gradient-to-t from-[#001c37]/20 to-transparent transition-opacity duration-300 group-hover:opacity-80"></div>

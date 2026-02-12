@@ -4,7 +4,8 @@
     <div class="absolute inset-0 parallax">
         <img src="../assets/images/video-bg.jpeg" 
              alt="Installation solaire en cours" 
-             class="w-full h-full object-cover">
+             class="w-full h-full object-cover" 
+             loading="lazy">
         <div class="absolute inset-0 bg-gradient-to-r from-[#001c37]/90 via-[#001c37]/80 to-[#001c37]/90"></div>
     </div>
 
@@ -30,8 +31,9 @@
                 <!-- Thumbnail + play overlay (hidden when video is playing) -->
                 <div id="video-poster" class="absolute inset-0 z-10 flex flex-col items-center justify-center cursor-pointer">
                     <img src="assets/images/laanding-video-thumbail.jpeg" 
-                         alt="Vidéo AFRICIA TECH" 
-                         class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-80 transition-opacity">
+                         alt="Vidéo de présentation AFRICIA TECH - installations solaires" 
+                         class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-80 transition-opacity"
+                         loading="lazy">
                     <div class="relative z-10 flex flex-col items-center pointer-events-none">
                         <div class="w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center mb-4 group-hover:bg-yellow-500 transition-all shadow-lg group-hover:scale-110 transform duration-300">
                             <svg class="w-12 h-12 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">

@@ -1,3 +1,5 @@
+    </main>
+
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/22395205556?text=Bonjour,%20je%20souhaite%20en%20savoir%20plus%20sur%20vos%20solutions%20énergétiques" target="_blank" rel="noopener" class="fixed bottom-6 right-6 w-16 h-16 bg-green-600 rounded-full flex items-center justify-center shadow-lg hover:bg-green-700 transition-all z-50 group">
         <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -11,9 +13,9 @@
     <!-- Footer Component -->
     <?php require __DIR__ . '/../components/footer.php'; ?>
 
-    <!-- Scripts -->
-    <script src="assets/js/app.js"></script>
-    <script src="assets/js/animations.js"></script>
+    <!-- Scripts (defer pour ne pas bloquer le rendu) -->
+    <script src="assets/js/app.js" defer></script>
+    <script src="assets/js/animations.js" defer></script>
 </body>
 
 </html>

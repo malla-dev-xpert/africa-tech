@@ -1,0 +1,15 @@
+# robots.txt pour AFRICIA TECH
+# https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Allow: /
+
+# Fichiers et dossiers à ne pas indexer
+Disallow: /admin.php
+Disallow: /logs/
+Disallow: /api/
+
+# Sitemap (généré dynamiquement par sitemap.php pour le bon domaine)
+# En production : Sitemap: https://africatech-mali.com/sitemap.php
+# Ou configurer une réécriture sitemap.xml -> sitemap.php
+Sitemap: /sitemap.php
