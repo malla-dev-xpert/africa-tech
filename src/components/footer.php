@@ -4,10 +4,10 @@
             <!-- Présentation AFRICIA TECH -->
             <div>
                 <div class="flex items-center gap-2 mb-6">
-                    <img src="assets/images/logo.png" alt="AFRICIA TECH" width="160" height="40" class="h-10 w-auto object-contain">
+                    <img src="assets/images/logo.png" alt="<?= htmlspecialchars(t('site.name')) ?>" width="160" height="40" class="h-10 w-auto object-contain">
                 </div>
                 <p class="text-gray-400 mb-6 leading-relaxed">
-                    Votre partenaire de confiance pour l'indépendance énergétique au Mali. Solutions solaires, électricité, domotique et formations professionnelles.
+                    <?= t('footer.tagline') ?>
                 </p>
                 <div class="flex gap-4">
                     <a href="https://www.facebook.com/profile.php?id=100071542517989" target="_blank" rel="noopener" class="text-gray-400 hover:text-yellow-400 transition-colors duration-300" aria-label="Facebook">
@@ -25,33 +25,33 @@
 
             <!-- Liens rapides -->
             <div>
-                <h3 class="text-white font-bold text-lg mb-6">Liens rapides</h3>
+                <h3 class="text-white font-bold text-lg mb-6"><?= t('footer.quick_links') ?></h3>
                 <ul class="space-y-3">
-                    <li><a href="#hero" class="hover:text-yellow-400 transition-colors">Accueil</a></li>
-                    <li><a href="#about" class="hover:text-yellow-400 transition-colors">À propos</a></li>
-                    <li><a href="#services" class="hover:text-yellow-400 transition-colors">Services</a></li>
-                    <li><a href="#products" class="hover:text-yellow-400 transition-colors">Produits</a></li>
-                    <li><a href="#formations" class="hover:text-yellow-400 transition-colors">Formations</a></li>
-                    <li><a href="#contact" class="hover:text-yellow-400 transition-colors">Contact</a></li>
+                    <li><a href="#hero" class="hover:text-yellow-400 transition-colors"><?= t('nav.home') ?></a></li>
+                    <li><a href="#about" class="hover:text-yellow-400 transition-colors"><?= t('nav.about') ?></a></li>
+                    <li><a href="#services" class="hover:text-yellow-400 transition-colors"><?= t('nav.services') ?></a></li>
+                    <li><a href="#products" class="hover:text-yellow-400 transition-colors"><?= t('nav.products') ?></a></li>
+                    <li><a href="#formations" class="hover:text-yellow-400 transition-colors"><?= t('nav.trainings') ?></a></li>
+                    <li><a href="#contact" class="hover:text-yellow-400 transition-colors"><?= t('nav.contact') ?></a></li>
                 </ul>
             </div>
 
             <!-- Services -->
             <div>
-                <h3 class="text-white font-bold text-lg mb-6">Nos services</h3>
+                <h3 class="text-white font-bold text-lg mb-6"><?= t('footer.our_services') ?></h3>
                 <ul class="space-y-3">
-                    <li><a href="#services" class="hover:text-yellow-400 transition-colors">Installation solaire</a></li>
-                    <li><a href="#services" class="hover:text-yellow-400 transition-colors">Électricité bâtiment</a></li>
-                    <li><a href="#services" class="hover:text-yellow-400 transition-colors">Climatisation</a></li>
-                    <li><a href="#services" class="hover:text-yellow-400 transition-colors">Maintenance</a></li>
-                    <li><a href="#services" class="hover:text-yellow-400 transition-colors">Domotique</a></li>
-                    <li><a href="#services" class="hover:text-yellow-400 transition-colors">Forage</a></li>
+                    <li><a href="#services" class="hover:text-yellow-400 transition-colors"><?= t('footer.service_solar') ?></a></li>
+                    <li><a href="#services" class="hover:text-yellow-400 transition-colors"><?= t('footer.service_electric') ?></a></li>
+                    <li><a href="#services" class="hover:text-yellow-400 transition-colors"><?= t('footer.service_ac') ?></a></li>
+                    <li><a href="#services" class="hover:text-yellow-400 transition-colors"><?= t('footer.service_maintenance') ?></a></li>
+                    <li><a href="#services" class="hover:text-yellow-400 transition-colors"><?= t('footer.service_domotic') ?></a></li>
+                    <li><a href="#services" class="hover:text-yellow-400 transition-colors"><?= t('footer.service_drilling') ?></a></li>
                 </ul>
             </div>
 
             <!-- Contact -->
             <div>
-                <h3 class="text-white font-bold text-lg mb-6">Contact</h3>
+                <h3 class="text-white font-bold text-lg mb-6"><?= t('footer.contact') ?></h3>
                 <ul class="space-y-4">
                     <li class="flex items-start gap-3">
                         <svg class="w-5 h-5 text-yellow-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -73,7 +73,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
-                        <span>Cité BMS face à la pharmacie<br>Issaka SANOGO</span>
+                        <span><?= t('contact.address_line1') ?><br><?= t('contact.address_line2') ?></span>
                     </li>
                 </ul>
             </div>
@@ -83,11 +83,11 @@
         <div class="border-t border-white/10 pt-8 mt-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-4">
                 <p class="text-gray-400 text-sm">
-                    &copy; <?php echo date('Y'); ?> AFRICIA TECH. Tous droits réservés.
+                    &copy; <?php echo date('Y'); ?> <?= htmlspecialchars(t('site.name')) ?>. <?= t('footer.copyright') ?>
                 </p>
                 <div class="flex gap-6 text-sm">
                     <div class="text-gray-400 hover:text-yellow-400 transition-colors">
-                        Développé par le <a href="https://groupexpertpro.com/Vue/index.php" target="_blank" rel="noopener" class="text-yellow-400 transition-colors">
+                        <?= t('footer.developed_by') ?> <a href="https://groupexpertpro.com/Vue/index.php" target="_blank" rel="noopener" class="text-yellow-400 transition-colors">
                             Groupe XPERT-PRO
                         </a>
                     </div>

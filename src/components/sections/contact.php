@@ -4,11 +4,11 @@
         <div class="text-center mb-16 slide-up">
             <div class="flex items-center justify-center gap-2 mb-4">
                 <span class="w-10 h-[2px] bg-yellow-400"></span>
-                <span class="uppercase text-xs font-bold tracking-[0.2em] text-yellow-400"><?= isset($contactSectionBadge) ? htmlspecialchars($contactSectionBadge) : 'Contact' ?></span>
+                <span class="uppercase text-xs font-bold tracking-[0.2em] text-yellow-400"><?= isset($contactSectionBadge) ? htmlspecialchars($contactSectionBadge) : t('contact.badge') ?></span>
                 <span class="w-10 h-[2px] bg-yellow-400"></span>
             </div>
-            <h2 class="text-4xl md:text-6xl font-black text-[#001c37] mb-6"><?php if (isset($contactSectionTitle)): ?><?= htmlspecialchars($contactSectionTitle) ?><?php else: ?>Contactez-<span class="text-yellow-400">nous</span><?php endif; ?></h2>
-            <p class="text-gray-600 max-w-2xl mx-auto"><?= isset($contactSectionSubtitle) ? htmlspecialchars($contactSectionSubtitle) : 'Notre équipe est disponible pour répondre à toutes vos questions' ?></p>
+            <h2 class="text-4xl md:text-6xl font-black text-[#001c37] mb-6"><?php if (isset($contactSectionTitle)): ?><?= htmlspecialchars($contactSectionTitle) ?><?php else: ?><?= t('contact.title') ?><span class="text-yellow-400"><?= t('contact.title_highlight') ?></span><?php endif; ?></h2>
+            <p class="text-gray-600 max-w-2xl mx-auto"><?= isset($contactSectionSubtitle) ? htmlspecialchars($contactSectionSubtitle) : t('contact.subtitle') ?></p>
         </div>
 
         <!-- Contact Info Cards -->
@@ -19,7 +19,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold text-[#001c37] mb-4">Téléphone</h3>
+                <h3 class="text-xl font-bold text-[#001c37] mb-4"><?= t('contact.phone_label') ?></h3>
                 <p class="text-gray-600 mb-2">+223 95 20 55 56</p>
                 <p class="text-gray-600">+223 74 91 71 50</p>
             </div>
@@ -30,7 +30,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold text-[#001c37] mb-4">Email</h3>
+                <h3 class="text-xl font-bold text-[#001c37] mb-4"><?= t('contact.email_label') ?></h3>
                 <p class="text-gray-600">africatech@gmail.com</p>
             </div>
 
@@ -41,7 +41,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold text-[#001c37] mb-4">Adresse</h3>
+                <h3 class="text-xl font-bold text-[#001c37] mb-4"><?= t('contact.address_label') ?></h3>
                 <p class="text-gray-600">Cité BMS face à la pharmacie<br>Issaka SANOGO</p>
             </div>
         </div>
@@ -50,13 +50,13 @@
         <div class="grid lg:grid-cols-2 gap-12">
             <!-- Contact Form -->
             <div class="slide-up">
-                <h3 class="text-3xl font-black text-[#001c37] mb-6">Envoyez-nous un message</h3>
-                <p class="text-gray-600 mb-8">Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
+                <h3 class="text-3xl font-black text-[#001c37] mb-6"><?= t('contact.form_title') ?></h3>
+                <p class="text-gray-600 mb-8"><?= t('contact.form_intro') ?></p>
                 
                 <form id="contact-form" method="post" action="" class="space-y-6">
                     <div>
                         <label for="name" class="block text-sm font-bold text-[#001c37] mb-2">
-                            Nom complet <span class="text-red-500">*</span>
+                            <?= t('contact.label_name') ?> <span class="text-red-500">*</span>
                         </label>
                         <input 
                             type="text" 
@@ -64,14 +64,14 @@
                             name="name" 
                             required
                             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all"
-                            placeholder="Votre nom"
+                            placeholder="<?= htmlspecialchars(t('contact.placeholder_name')) ?>"
                         >
                         <span class="text-red-500 text-sm hidden" id="name-error"></span>
                     </div>
 
                     <div>
                         <label for="email" class="block text-sm font-bold text-[#001c37] mb-2">
-                            Email <span class="text-red-500">*</span>
+                            <?= t('contact.label_email') ?> <span class="text-red-500">*</span>
                         </label>
                         <input 
                             type="email" 
@@ -79,27 +79,27 @@
                             name="email" 
                             required
                             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all"
-                            placeholder="votre@email.com"
+                            placeholder="<?= htmlspecialchars(t('contact.placeholder_email')) ?>"
                         >
                         <span class="text-red-500 text-sm hidden" id="email-error"></span>
                     </div>
 
                     <div>
                         <label for="phone" class="block text-sm font-bold text-[#001c37] mb-2">
-                            Téléphone
+                            <?= t('contact.label_phone') ?>
                         </label>
                         <input 
                             type="tel" 
                             id="phone" 
                             name="phone"
                             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all"
-                            placeholder="+223 XX XX XX XX"
+                            placeholder="<?= htmlspecialchars(t('contact.placeholder_phone')) ?>"
                         >
                     </div>
 
                     <div>
                         <label for="subject" class="block text-sm font-bold text-[#001c37] mb-2">
-                            Sujet <span class="text-red-500">*</span>
+                            <?= t('contact.label_subject') ?> <span class="text-red-500">*</span>
                         </label>
                         <select 
                             id="subject" 
@@ -107,20 +107,20 @@
                             required
                             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all"
                         >
-                            <option value="">Sélectionnez un sujet</option>
-                            <option value="devis">Demande de devis</option>
-                            <option value="installation">Installation solaire</option>
-                            <option value="maintenance">Maintenance</option>
-                            <option value="formation">Formation</option>
-                            <option value="produit">Information sur un produit</option>
-                            <option value="autre">Autre</option>
+                            <option value=""><?= t('contact.placeholder_subject') ?></option>
+                            <option value="devis"><?= t('contact.subject_quote') ?></option>
+                            <option value="installation"><?= t('contact.subject_solar') ?></option>
+                            <option value="maintenance"><?= t('contact.subject_maintenance') ?></option>
+                            <option value="formation"><?= t('contact.subject_training') ?></option>
+                            <option value="produit"><?= t('contact.subject_product') ?></option>
+                            <option value="autre"><?= t('contact.subject_other') ?></option>
                         </select>
                         <span class="text-red-500 text-sm hidden" id="subject-error"></span>
                     </div>
 
                     <div>
                         <label for="message" class="block text-sm font-bold text-[#001c37] mb-2">
-                            Message <span class="text-red-500">*</span>
+                            <?= t('contact.label_message') ?> <span class="text-red-500">*</span>
                         </label>
                         <textarea 
                             id="message" 
@@ -128,7 +128,7 @@
                             rows="6" 
                             required
                             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all resize-none"
-                            placeholder="Décrivez votre projet ou votre demande..."
+                            placeholder="<?= htmlspecialchars(t('contact.placeholder_message')) ?>"
                         ></textarea>
                         <span class="text-red-500 text-sm hidden" id="message-error"></span>
                     </div>
@@ -137,10 +137,10 @@
                         type="submit" 
                         id="submit-btn"
                         class="w-full bg-yellow-400 text-white px-8 py-4 rounded-lg font-bold uppercase text-sm hover:bg-yellow-500 transition-all shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
-                        aria-label="Envoyer le formulaire de contact"
+                        aria-label="<?= htmlspecialchars(t('contact.submit')) ?>"
                     >
-                        <span id="submit-text">Envoyer le message</span>
-                        <span id="submit-loading" class="hidden">Envoi en cours...</span>
+                        <span id="submit-text"><?= t('contact.submit') ?></span>
+                        <span id="submit-loading" class="hidden"><?= t('contact.sending') ?></span>
                     </button>
 
                     <div id="form-success" class="hidden p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
@@ -148,7 +148,7 @@
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                             </svg>
-                            Message envoyé avec succès ! Nous vous répondrons bientôt.
+                            <?= t('contact.success') ?>
                         </p>
                     </div>
 
@@ -157,7 +157,7 @@
                             <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
                             </svg>
-                            <span id="form-error-text">Une erreur s'est produite. Veuillez réessayer ou nous contacter directement.</span>
+                            <span id="form-error-text"><?= t('contact.error') ?></span>
                         </p>
                     </div>
                 </form>
@@ -165,8 +165,8 @@
 
             <!-- Map Section -->
             <div class="slide-up">
-                <h3 class="text-3xl font-black text-[#001c37] mb-6">Notre localisation</h3>
-                <p class="text-gray-600 mb-8">Venez nous rendre visite à notre bureau situé à Faladie Sema, Bamako.</p>
+                <h3 class="text-3xl font-black text-[#001c37] mb-6"><?= t('contact.map_title') ?></h3>
+                <p class="text-gray-600 mb-8"><?= t('contact.map_desc') ?></p>
                 
                 <!-- Google Maps Embed -->
                 <div class="rounded-lg overflow-hidden shadow-lg h-[500px] border border-gray-200">
@@ -179,7 +179,7 @@
                         loading="lazy" 
                         referrerpolicy="no-referrer-when-downgrade"
                         class="w-full h-full"
-                        title="Localisation AFRICIA TECH - Faladie Sema, Bamako, Mali"
+                        title="<?= htmlspecialchars(t('contact.map_aria')) ?>"
                     ></iframe>
                 </div>
 
@@ -193,9 +193,9 @@
                             </svg>
                         </div>
                         <div>
-                            <h4 class="font-bold text-[#001c37] mb-2">Adresse complète</h4>
-                            <p class="text-gray-600 mb-1">Cité BMS face à la pharmacie</p>
-                            <p class="text-gray-600">Issaka SANOGO</p>
+                            <h4 class="font-bold text-[#001c37] mb-2"><?= t('contact.map_title') ?></h4>
+                            <p class="text-gray-600 mb-1"><?= t('contact.address_line1') ?></p>
+                            <p class="text-gray-600"><?= t('contact.address_line2') ?></p>
                         </div>
                     </div>
                 </div>

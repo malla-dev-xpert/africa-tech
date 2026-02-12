@@ -15,23 +15,31 @@ $base = $protocol . '://' . $host . $basePath;
 $today = date('Y-m-d');
 
 $urls = [
-    ['loc' => $base . '/', 'priority' => '1.0', 'changefreq' => 'weekly'],
-    ['loc' => $base . '/about.php', 'priority' => '0.9', 'changefreq' => 'monthly'],
-    ['loc' => $base . '/services.php', 'priority' => '0.9', 'changefreq' => 'monthly'],
-    ['loc' => $base . '/products.php', 'priority' => '0.9', 'changefreq' => 'weekly'],
-    ['loc' => $base . '/formations.php', 'priority' => '0.9', 'changefreq' => 'monthly'],
-    ['loc' => $base . '/contact.php', 'priority' => '0.8', 'changefreq' => 'monthly'],
+    ['path' => '/', 'priority' => '1.0', 'changefreq' => 'weekly'],
+    ['path' => '/about.php', 'priority' => '0.9', 'changefreq' => 'monthly'],
+    ['path' => '/services.php', 'priority' => '0.9', 'changefreq' => 'monthly'],
+    ['path' => '/products.php', 'priority' => '0.9', 'changefreq' => 'weekly'],
+    ['path' => '/formations.php', 'priority' => '0.9', 'changefreq' => 'monthly'],
+    ['path' => '/contact.php', 'priority' => '0.8', 'changefreq' => 'monthly'],
 ];
 
 echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
 ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<?php foreach ($urls as $u): ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<?php foreach ($urls as $u):
+    $path = $u['path'];
+    $locFr = $path === '/' ? $base . '/' : $base . $path . '?lang=fr';
+    $locEn = $path === '/' ? $base . '/?lang=en' : $base . $path . '?lang=en';
+    $locDefault = $path === '/' ? $base . '/' : $base . $path;
+?>
     <url>
-        <loc><?= htmlspecialchars($u['loc']) ?></loc>
+        <loc><?= htmlspecialchars($locDefault) ?></loc>
         <lastmod><?= $today ?></lastmod>
         <changefreq><?= $u['changefreq'] ?></changefreq>
         <priority><?= $u['priority'] ?></priority>
+        <xhtml:link rel="alternate" hreflang="fr" href="<?= htmlspecialchars($locFr) ?>" />
+        <xhtml:link rel="alternate" hreflang="en" href="<?= htmlspecialchars($locEn) ?>" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="<?= htmlspecialchars($locFr) ?>" />
     </url>
 <?php endforeach; ?>
 </urlset>

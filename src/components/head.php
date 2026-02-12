@@ -2,21 +2,24 @@
 if (!isset($baseUrl)) {
     require_once __DIR__ . '/../config/app.php';
 }
-$pageTitle = isset($pageTitle) ? htmlspecialchars($pageTitle) : 'AFRICIA TECH';
-$pageDescription = isset($pageDescription) ? htmlspecialchars($pageDescription) : 'AFRICIA TECH - Solutions solaires, électricité, domotique et formations en énergies renouvelables au Mali.';
+// Titre et description : clés de traduction (pageTitleKey / pageDescriptionKey) ou valeurs brutes
+$pageTitle = isset($pageTitleKey) ? t($pageTitleKey) : (isset($pageTitle) ? htmlspecialchars($pageTitle) : t('site.name'));
+$pageDescription = isset($pageDescriptionKey) ? t($pageDescriptionKey) : (isset($pageDescription) ? htmlspecialchars($pageDescription) : t('meta.default_description'));
 $ogTitle = isset($ogTitle) ? htmlspecialchars($ogTitle) : $pageTitle;
 $ogDescription = isset($ogDescription) ? htmlspecialchars($ogDescription) : $pageDescription;
 $ogImage = isset($ogImage) ? $ogImage : ($baseUrl . '/assets/images/logo.png');
-$ogUrl = isset($ogUrl) ? $ogUrl : ($baseUrl . ($_SERVER['REQUEST_URI'] ?? '/'));
 $reqUri = $_SERVER['REQUEST_URI'] ?? '';
+$reqUriPath = preg_replace('#\?.*$#', '', $reqUri) ?: '/';
 $scriptName = $_SERVER['SCRIPT_NAME'] ?? '';
-if ($scriptName === '/index.php' || $scriptName === 'index.php' || rtrim($reqUri, '/') === '' || $reqUri === '/') {
-    $canonicalUrl = isset($canonicalUrl) ? $canonicalUrl : ($baseUrl . '/');
-} else {
-    $canonicalUrl = isset($canonicalUrl) ? $canonicalUrl : $ogUrl;
-}
+$isHome = ($scriptName === '/index.php' || $scriptName === 'index.php' || rtrim($reqUriPath, '/') === '' || $reqUriPath === '/');
+$currentPageUrl = $baseUrl . ($isHome ? '/' : $reqUriPath) . ($currentLang !== 'fr' ? (strpos($isHome ? '/' : $reqUriPath, '?') !== false ? '&' : '?') . 'lang=' . $currentLang : '');
+$ogUrl = isset($ogUrl) ? $ogUrl : $currentPageUrl;
+$canonicalUrl = isset($canonicalUrl) ? $canonicalUrl : $currentPageUrl;
 $metaRobots = isset($metaRobots) ? $metaRobots : 'index, follow';
 $faviconUrl = $baseUrl . '/assets/images/faveicon.png';
+// URLs alternates pour SEO multilingue (hreflang)
+$hreflangPath = $isHome ? '/' : $reqUriPath;
+$hreflangBase = $baseUrl . $hreflangPath . (strpos($hreflangPath, '?') !== false ? '&' : '?');
 ?>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -36,14 +39,19 @@ $faviconUrl = $baseUrl . '/assets/images/faveicon.png';
 <!-- Canonical URL -->
 <link rel="canonical" href="<?= htmlspecialchars($canonicalUrl) ?>" />
 
+<!-- SEO multilingue : alternates hreflang -->
+<link rel="alternate" hreflang="fr" href="<?= htmlspecialchars($hreflangBase . 'lang=fr') ?>" />
+<link rel="alternate" hreflang="en" href="<?= htmlspecialchars($hreflangBase . 'lang=en') ?>" />
+<link rel="alternate" hreflang="x-default" href="<?= htmlspecialchars($baseUrl . $hreflangPath . (strpos($hreflangPath, '?') !== false ? '&' : '?') . 'lang=fr') ?>" />
+
 <!-- Theme color (mobile / PWA) -->
 <meta name="theme-color" content="#001c37" />
 <meta name="msapplication-TileColor" content="#001c37" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
-<meta property="og:locale" content="fr_FR" />
-<meta property="og:site_name" content="AFRICIA TECH" />
+<meta property="og:locale" content="<?= $currentLang === 'en' ? 'en_US' : 'fr_FR' ?>" />
+<meta property="og:site_name" content="<?= htmlspecialchars(t('site.name')) ?>" />
 <meta property="og:title" content="<?= $ogTitle ?>" />
 <meta property="og:description" content="<?= $ogDescription ?>" />
 <meta property="og:image" content="<?= htmlspecialchars($ogImage) ?>" />
@@ -65,14 +73,14 @@ $faviconUrl = $baseUrl . '/assets/images/faveicon.png';
 $jsonLd = [
     '@context' => 'https://schema.org',
     '@type' => 'LocalBusiness',
-    'name' => 'AFRICIA TECH',
-    'description' => 'Solutions solaires, électricité, domotique et formations en énergies renouvelables au Mali.',
+    'name' => t('site.name'),
+    'description' => t('meta.default_description'),
     'url' => $baseUrl,
     'logo' => $baseUrl . '/assets/images/logo.png',
     'image' => $baseUrl . '/assets/images/logo.png',
     'address' => [
         '@type' => 'PostalAddress',
-        'streetAddress' => 'Cité BMS face à la pharmacie Issaka SANOGO',
+        'streetAddress' => t('header.address'),
         'addressCountry' => 'ML',
     ],
     'telephone' => '+22395205556',

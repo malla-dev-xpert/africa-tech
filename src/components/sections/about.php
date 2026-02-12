@@ -15,7 +15,7 @@
                     <div class="relative w-full h-full rounded-3xl overflow-hidden">
                         <img 
                             src="../assets/images/landing-about.jpeg" 
-                            alt="Équipe AFRICIA TECH - Installation de panneaux solaires" 
+                            alt="<?= htmlspecialchars(t('about.alt')) ?>" 
                             width="800" 
                             height="600"
                             class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
@@ -37,10 +37,10 @@
                             </div>
                             <div class="min-w-0">
                                 <div class="text-lg md:text-2xl font-black text-[#001c37]" data-counter="100">0+</div>
-                                <div class="text-[10px] md:text-xs text-gray-600 font-semibold">Projets</div>
+                                <div class="text-[10px] md:text-xs text-gray-600 font-semibold"><?= t('about.projects') ?></div>
                             </div>
                         </div>
-                        <p class="text-[10px] md:text-xs text-gray-500 leading-tight hidden md:block">Installations réalisées avec succès</p>
+                        <p class="text-[10px] md:text-xs text-gray-500 leading-tight hidden md:block"><?= t('about.projects_desc') ?></p>
                     </div>
 
                     <!-- Card 2 - Overflow on top-right -->
@@ -53,10 +53,10 @@
                             </div>
                             <div class="min-w-0">
                                 <div class="text-lg md:text-2xl font-black text-yellow-400" data-counter="50">0+</div>
-                                <div class="text-[10px] md:text-xs text-gray-300 font-semibold">Clients</div>
+                                <div class="text-[10px] md:text-xs text-gray-300 font-semibold"><?= t('about.clients') ?></div>
                             </div>
                         </div>
-                        <p class="text-[10px] md:text-xs text-gray-400 leading-tight hidden md:block">Clients satisfaits et fidèles</p>
+                        <p class="text-[10px] md:text-xs text-gray-400 leading-tight hidden md:block"><?= t('about.clients_desc') ?></p>
                     </div>
                 </div>
             </div>
@@ -65,17 +65,17 @@
             <div class="slide-up">
                 <!-- Pre-headline -->
                 <div class="text-yellow-400 uppercase text-sm font-bold tracking-wider mb-4">
-                    Bienvenue, créons ensemble un avenir durable !
+                    <?= t('about.welcome') ?>
                 </div>
 
                 <!-- Main headline -->
                 <h2 class="text-4xl font-black text-[#001c37] mb-6 leading-tight">
-                    Une entreprise de confiance en <span class="text-yellow-400">solutions énergétiques</span>
+                    <?= t('about.heading') ?> <span class="text-yellow-400"><?= t('about.heading_highlight') ?></span>
                 </h2>
 
                 <!-- Description paragraph -->
                 <p class="text-gray-600 text-lg mb-8 leading-relaxed">
-                    AFRICIA TECH est une entreprise malienne de confiance spécialisée dans les solutions énergétiques durables. Notre mission est de créer un changement positif dans notre communauté en fournissant des solutions solaires de qualité et en offrant des formations professionnelles en énergies renouvelables.
+                    <?= t('about.intro') ?>
                 </p>
 
                 <!-- Feature boxes (Icon + Text) -->
@@ -92,8 +92,8 @@
                             </div>
                         </div>
                         <div>
-                            <h3 class="font-bold text-[#001c37] text-lg mb-1">Solutions Solaires</h3>
-                            <p class="text-gray-600 text-sm">Installations professionnelles et durables</p>
+                            <h3 class="font-bold text-[#001c37] text-lg mb-1"><?= t('about.solar_title') ?></h3>
+                            <p class="text-gray-600 text-sm"><?= t('about.solar_desc') ?></p>
                         </div>
                     </div>
 
@@ -109,8 +109,8 @@
                             </div>
                         </div>
                         <div>
-                            <h3 class="font-bold text-[#001c37] text-lg mb-1">Formations Professionnelles</h3>
-                            <p class="text-gray-600 text-sm">Développez vos compétences en énergies renouvelables</p>
+                            <h3 class="font-bold text-[#001c37] text-lg mb-1"><?= t('about.training_title') ?></h3>
+                            <p class="text-gray-600 text-sm"><?= t('about.training_desc') ?></p>
                         </div>
                     </div>
                 </div>
@@ -123,7 +123,7 @@
                                 <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
                             </svg>
                         </div>
-                        <span class="text-gray-600 leading-relaxed">Fourniture d'équipements solaires de première qualité pour les particuliers et entreprises.</span>
+                        <span class="text-gray-600 leading-relaxed"><?= t('about.bullet1') ?></span>
                     </li>
                     <li class="flex items-start gap-3">
                         <div class="flex-shrink-0 mt-1">
@@ -131,7 +131,7 @@
                                 <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
                             </svg>
                         </div>
-                        <span class="text-gray-600 leading-relaxed">Accompagnement technique et maintenance pour garantir la performance de vos installations.</span>
+                        <span class="text-gray-600 leading-relaxed"><?= t('about.bullet2') ?></span>
                     </li>
                     <li class="flex items-start gap-3">
                         <div class="flex-shrink-0 mt-1">
@@ -139,7 +139,7 @@
                                 <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
                             </svg>
                         </div>
-                        <span class="text-gray-600 leading-relaxed">Programmes de formation pour développer les compétences locales en énergies renouvelables.</span>
+                        <span class="text-gray-600 leading-relaxed"><?= t('about.bullet3') ?></span>
                     </li>
                 </ul>
 
@@ -148,7 +148,7 @@
                     href="#contact" 
                     class="inline-block bg-yellow-400 text-white px-10 py-4 rounded-lg font-bold uppercase text-sm hover:bg-yellow-500 transition-all shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
                 >
-                    Nous contacter maintenant
+                    <?= t('about.cta') ?>
                 </a>
             </div>
         </div>

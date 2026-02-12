@@ -1,7 +1,9 @@
 <?php
+require_once __DIR__ . '/../config/app.php';
 $currentPage = 'products';
-$pageTitle = 'Nos Produits - AFRICIA TECH';
-$pageDescription = 'Découvrez notre gamme de produits solaires : panneaux solaires, batteries, kits solaires, onduleurs et lampadaires solaires. Équipements de qualité pour vos projets énergétiques.';
+$pageTitleKey = 'page.products.title';
+$pageDescriptionKey = 'page.products.description';
+$productsSectionTitle = t('page_products.section_title');
 
 $products = [];
 $showFilters = true;
@@ -75,19 +77,17 @@ require __DIR__ . '/../layouts/main.php';
     <div class="relative z-10 max-w-7xl mx-auto px-4 text-center text-white">
         <div class="flex items-center justify-center gap-2 mb-4">
             <span class="w-10 h-[2px] bg-yellow-400"></span>
-            <span class="uppercase text-xs font-bold tracking-[0.2em] text-yellow-400">Nos produits</span>
+            <span class="uppercase text-xs font-bold tracking-[0.2em] text-yellow-400"><?= t('page_products.hero_badge') ?></span>
             <span class="w-10 h-[2px] bg-yellow-400"></span>
         </div>
-        <h1 class="text-4xl md:text-6xl font-black mb-4">Nos <span class="text-yellow-400">Produits</span></h1>
-        <p class="text-xl text-gray-300 max-w-3xl mx-auto">Équipements solaires de première qualité pour votre indépendance énergétique</p>
+        <h1 class="text-4xl md:text-6xl font-black mb-4"><?= t('page_products.hero_title') ?> <span class="text-yellow-400"><?= t('page_products.hero_title_hl') ?></span></h1>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto"><?= t('page_products.hero_subtitle') ?></p>
     </div>
 </section>
 
 <?php
-// Titres distincts du hero pour la section produits
-$productsSectionBadge = 'Notre catalogue';
-$productsSectionTitle = 'Équipements et solutions';
-$productsSectionSubtitle = 'Panneaux, batteries, onduleurs et accessoires pour vos projets';
+$productsSectionBadge = t('products.catalogue_badge');
+$productsSectionSubtitle = t('products.catalogue_subtitle');
 ?>
 <!-- Products Section Component -->
 <?php require __DIR__ . '/../components/sections/products.php'; ?>

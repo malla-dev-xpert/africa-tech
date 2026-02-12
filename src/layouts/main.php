@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../config/app.php';
 ?>
 <!doctype html>
-<html lang="fr">
+<html lang="<?= htmlspecialchars($currentLang) ?>">
 
 <head>
     <?php require __DIR__ . '/../components/head.php'; ?>

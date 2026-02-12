@@ -1,7 +1,7 @@
 <?php
 $currentPage = 'accueil';
-$pageTitle = 'Accueil - AFRICIA TECH';
-$pageDescription = 'AFRICIA TECH - Solutions solaires, électricité, domotique et formations en énergies renouvelables au Mali. Expertise technique, équipements de qualité, accompagnement durable.';
+$pageTitleKey = 'page.home.title';
+$pageDescriptionKey = 'page.home.description';
 
 $products = [];
 $productsShowAllLink = true;

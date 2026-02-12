@@ -5,7 +5,7 @@ if (!isset($products) || !is_array($products)) {
 }
 $showFilters = !empty($showFilters);
 $productsShowAllLink = !empty($productsShowAllLink);
-$whatsappBase = 'https://wa.me/22395205556?text=' . rawurlencode('Bonjour. Je suis intéressé par ');
+$whatsappBase = 'https://wa.me/22395205556?text=' . rawurlencode(t('products.wa_intro'));
 ?>
 <!-- Products Section - Modern card design -->
 <section id="products" class="py-20 bg-gradient-to-b from-slate-50 to-white">
@@ -13,38 +13,37 @@ $whatsappBase = 'https://wa.me/22395205556?text=' . rawurlencode('Bonjour. Je su
         <div class="text-center mb-16 slide-up">
             <div class="flex items-center justify-center gap-2 mb-4">
                 <span class="w-10 h-[2px] bg-yellow-400"></span>
-                <span class="uppercase text-xs font-bold tracking-[0.2em] text-yellow-400"><?= isset($productsSectionBadge) ? htmlspecialchars($productsSectionBadge) : 'Nos produits' ?></span>
+                <span class="uppercase text-xs font-bold tracking-[0.2em] text-yellow-400"><?= isset($productsSectionBadge) ? htmlspecialchars($productsSectionBadge) : t('products.badge') ?></span>
                 <span class="w-10 h-[2px] bg-yellow-400"></span>
             </div>
-            <h2 class="text-4xl md:text-6xl font-black text-[#001c37] mb-6"><?php if (isset($productsSectionTitle)): ?><?= htmlspecialchars($productsSectionTitle) ?><?php else: ?>Nos <span class="text-yellow-400">Produits</span><?php endif; ?></h2>
-            <p class="text-gray-600 max-w-2xl mx-auto"><?= isset($productsSectionSubtitle) ? htmlspecialchars($productsSectionSubtitle) : 'Équipements de qualité pour vos projets énergétiques' ?></p>
+            <h2 class="text-4xl md:text-6xl font-black text-[#001c37] mb-6"><?php if (isset($productsSectionTitle)): ?><?= htmlspecialchars($productsSectionTitle) ?><?php else: ?><?= t('products.title') ?> <span class="text-yellow-400"><?= t('products.title_highlight') ?></span><?php endif; ?></h2>
+            <p class="text-gray-600 max-w-2xl mx-auto"><?= isset($productsSectionSubtitle) ? htmlspecialchars($productsSectionSubtitle) : t('products.subtitle') ?></p>
         </div>
 
         <?php if ($showFilters): ?>
         <form method="get" action="products.php" class="mb-10 slide-up flex flex-wrap items-end gap-4">
+            <?php if (!empty($currentLang) && $currentLang !== 'fr'): ?><input type="hidden" name="lang" value="<?= htmlspecialchars($currentLang) ?>" /><?php endif; ?>
             <div class="flex-1 min-w-[200px]">
-                <label for="products-q" class="block text-sm font-semibold text-gray-700 mb-1">Recherche par nom</label>
+                <label for="products-q" class="block text-sm font-semibold text-gray-700 mb-1"><?= t('products.search_placeholder') ?></label>
                 <input type="text" id="products-q" name="q" value="<?= htmlspecialchars($_GET['q'] ?? '') ?>"
-                       placeholder="Nom du produit..."
+                       placeholder="<?= htmlspecialchars(t('products.search_placeholder')) ?>"
                        class="w-full rounded-xl border border-gray-300 px-4 py-2.5 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-500 outline-none" />
             </div>
             <div class="w-36">
-                <label for="products-min" class="block text-sm font-semibold text-gray-700 mb-1">Min (FCFA)</label>
+                <label for="products-min" class="block text-sm font-semibold text-gray-700 mb-1"><?= t('products.filter_min') ?></label>
                 <input type="number" id="products-min" name="min_price" value="<?= htmlspecialchars($_GET['min_price'] ?? '') ?>"
                        placeholder="0" min="0" step="1000"
                        class="w-full rounded-xl border border-gray-300 px-4 py-2.5 focus:ring-2 focus:ring-yellow-400 outline-none" />
             </div>
             <div class="w-36">
-                <label for="products-max" class="block text-sm font-semibold text-gray-700 mb-1">Max (FCFA)</label>
+                <label for="products-max" class="block text-sm font-semibold text-gray-700 mb-1"><?= t('products.filter_max') ?></label>
                 <input type="number" id="products-max" name="max_price" value="<?= htmlspecialchars($_GET['max_price'] ?? '') ?>"
                        placeholder="—" min="0" step="1000"
                        class="w-full rounded-xl border border-gray-300 px-4 py-2.5 focus:ring-2 focus:ring-yellow-400 outline-none" />
             </div>
-            <button type="submit" class="px-5 py-2.5 bg-[#001c37] text-white font-bold rounded-xl hover:bg-yellow-500 hover:text-[#001c37] transition-colors duration-300" aria-label="Appliquer les filtres de recherche">
-                Filtrer
-            </button>
+            <button type="submit" class="px-5 py-2.5 bg-[#001c37] text-white font-bold rounded-xl hover:bg-yellow-500 hover:text-[#001c37] transition-colors duration-300" aria-label="<?= htmlspecialchars(t('products.filter_btn')) ?>"><?= t('products.filter_btn') ?></button>
             <?php if (!empty($_GET['q']) || isset($_GET['min_price']) && $_GET['min_price'] !== '' || isset($_GET['max_price']) && $_GET['max_price'] !== ''): ?>
-            <a href="products.php" class="px-5 py-2.5 border border-gray-300 rounded-xl font-medium text-gray-700 hover:bg-gray-50">Réinitialiser</a>
+            <a href="products.php<?= (isset($currentLang) && $currentLang !== 'fr') ? '?lang=' . $currentLang : '' ?>" class="px-5 py-2.5 border border-gray-300 rounded-xl font-medium text-gray-700 hover:bg-gray-50"><?= t('products.reset_btn') ?></a>
             <?php endif; ?>
         </form>
         <?php endif; ?>
@@ -54,14 +53,14 @@ $whatsappBase = 'https://wa.me/22395205556?text=' . rawurlencode('Bonjour. Je su
                 <svg class="w-20 h-20 text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
                 </svg>
-                <p class="text-lg font-medium">Pas de produits</p>
-                <p class="text-sm mt-1">Aucun produit ne correspond pour le moment.</p>
+                <p class="text-lg font-medium"><?= t('products.empty') ?></p>
+                <p class="text-sm mt-1"><?= t('products.empty_desc') ?></p>
             </div>
         <?php else: ?>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 <?php foreach ($products as $p): 
                     $prodUrl = 'https://' . $_SERVER['HTTP_HOST'] . '/products.php?product_id=' . $p['id'];
-                    $waMessage = "Bonjour. Je suis intéressé par " . ($p['name'] ?? '') . " (" . ($p['price'] ?? '') . ").\n\nVoici le lien du produit : " . $prodUrl;
+                    $waMessage = t('products.wa_intro') . " " . ($p['name'] ?? '') . " (" . ($p['price'] ?? '') . ").\n\n" . t('products.wa_link_text') . " " . $prodUrl;
                     $waLink = "https://wa.me/22395205556?text=" . rawurlencode($waMessage);
                 ?>
                 <article class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col slide-up border border-gray-100 hover:border-yellow-400/30">
@@ -75,7 +74,7 @@ $whatsappBase = 'https://wa.me/22395205556?text=' . rawurlencode('Bonjour. Je su
                         <p class="text-sm text-gray-500 mb-4 flex-1 line-clamp-2"><?= htmlspecialchars($p['description'] ?? '') ?></p>
                         <p class="text-xl font-black text-yellow-500 mb-4"><?= htmlspecialchars($p['price'] ?? '') ?></p>
                         <a href="<?= htmlspecialchars($waLink) ?>" target="_blank" rel="noopener" class="block w-full bg-[#001c37] text-white py-3.5 rounded-xl font-bold text-sm hover:bg-yellow-400 hover:text-[#001c37] transition-all duration-300 text-center">
-                            Je suis intéressé
+                            <?= t('products.cta_interest') ?>
                         </a>
                     </div>
                 </article>
@@ -85,8 +84,8 @@ $whatsappBase = 'https://wa.me/22395205556?text=' . rawurlencode('Bonjour. Je su
 
         <?php if ($productsShowAllLink): ?>
             <div class="text-center mt-12 slide-up">
-                <a href="products.php" class="inline-flex items-center gap-2 px-8 py-4 bg-[#001c37] text-white font-bold rounded-xl hover:bg-yellow-500 hover:text-[#001c37] transition-all duration-300">
-                    Voir tous les produits
+                <a href="products.php<?= (isset($currentLang) && $currentLang !== 'fr') ? '?lang=' . $currentLang : '' ?>" class="inline-flex items-center gap-2 px-8 py-4 bg-[#001c37] text-white font-bold rounded-xl hover:bg-yellow-500 hover:text-[#001c37] transition-all duration-300">
+                    <?= t('products.see_all') ?>
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                 </a>
             </div>

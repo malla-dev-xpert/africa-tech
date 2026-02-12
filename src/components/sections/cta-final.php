@@ -3,7 +3,7 @@
     <!-- Background image -->
     <div class="absolute inset-0">
         <img src="../assets/images/final-cta.jpeg" 
-             alt="AFRICIA TECH - Prêt à passer à l'énergie solaire" 
+             alt="<?= htmlspecialchars(t('cta.alt')) ?>" 
              width="1920" 
              height="1080"
              class="w-full h-full object-cover" 
@@ -13,13 +13,13 @@
     <!-- Content -->
     <div class="relative z-10 max-w-7xl mx-auto px-4 text-center fade-in">
         <h2 class="text-4xl md:text-6xl font-black mb-6">
-            Prêt à passer à l'<span class="text-yellow-400">énergie solaire</span> ?
+            <?= t('cta.title') ?><span class="text-yellow-400"><?= t('cta.title_highlight') ?></span> ?
         </h2>
         <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-            Parlons de votre projet et trouvons ensemble la solution énergétique qui vous convient. Notre équipe est à votre écoute pour vous accompagner.
+            <?= t('cta.subtitle') ?>
         </p>
-        <a href="https://wa.me/22395205556?text=Bonjour,%20je%20souhaite%20discuter%20de%20mon%20projet%20énergétique" target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-12 py-6 rounded-lg font-bold uppercase text-lg hover:bg-yellow-500 transition-all shadow-lg hover:shadow-xl">
-            Parlons de votre projet
+        <a href="https://wa.me/22395205556?text=<?= rawurlencode(($currentLang ?? 'fr') === 'en' ? 'Hello, I would like to discuss my energy project' : 'Bonjour, je souhaite discuter de mon projet énergétique') ?>" target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-12 py-6 rounded-lg font-bold uppercase text-lg hover:bg-yellow-500 transition-all shadow-lg hover:shadow-xl">
+            <?= t('cta.cta') ?>
         </a>
     </div>
 </section>

@@ -4,11 +4,11 @@
         <div class="text-center mb-16 slide-up">
             <div class="flex items-center justify-center gap-2 mb-4">
                 <span class="w-10 h-[2px] bg-yellow-400"></span>
-                <span class="uppercase text-xs font-bold tracking-[0.2em] text-yellow-400">Nos services</span>
+                <span class="uppercase text-xs font-bold tracking-[0.2em] text-yellow-400"><?= t('services.badge') ?></span>
                 <span class="w-10 h-[2px] bg-yellow-400"></span>
             </div>
-            <h2 class="text-4xl md:text-6xl font-black mb-6">Nos <span class="text-yellow-400">Services</span></h2>
-            <p class="text-gray-300 max-w-2xl mx-auto">Des solutions complètes pour tous vos besoins énergétiques</p>
+            <h2 class="text-4xl md:text-6xl font-black mb-6"><?= t('services.title') ?> <span class="text-yellow-400"><?= t('services.title_highlight') ?></span></h2>
+            <p class="text-gray-300 max-w-2xl mx-auto"><?= t('services.subtitle') ?></p>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -19,10 +19,10 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold mb-4">Installation solaire</h3>
-                <p class="text-gray-300 mb-6 leading-relaxed">Installation complète de systèmes photovoltaïques pour particuliers et entreprises. Étude, dimensionnement et installation sur mesure.</p>
-                <a href="https://wa.me/22395205556?text=Bonjour.%20Je%20suis%20int%C3%A9ress%C3%A9%20par%20l%27installation%20solaire%20pour%20en%20savoir%20plus." target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all">
-                    Demander un devis WhatsApp
+                <h3 class="text-xl font-bold mb-4"><?= t('services.solar_title') ?></h3>
+                <p class="text-gray-300 mb-6 leading-relaxed"><?= t('services.solar_desc') ?></p>
+                <a href="https://wa.me/22395205556?text=<?= rawurlencode(($currentLang ?? 'fr') === 'en' ? 'Hello. I am interested in solar installation.' : 'Bonjour. Je suis intéressé par l\'installation solaire pour en savoir plus.') ?>" target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all">
+                    <?= t('services.cta_whatsapp') ?>
                 </a>
             </div>
 
@@ -33,10 +33,10 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold mb-4">Électricité bâtiment</h3>
-                <p class="text-gray-300 mb-6 leading-relaxed">Installation électrique complète pour maisons, bureaux et bâtiments industriels. Conformité aux normes en vigueur.</p>
-                <a href="https://wa.me/22395205556?text=Bonjour.%20Je%20suis%20int%C3%A9ress%C3%A9%20par%20l%27%C3%A9lectricit%C3%A9%20b%C3%A2timent%20pour%20en%20savoir%20plus." target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all">
-                    Demander un devis WhatsApp
+                <h3 class="text-xl font-bold mb-4"><?= t('services.electric_title') ?></h3>
+                <p class="text-gray-300 mb-6 leading-relaxed"><?= t('services.electric_desc') ?></p>
+                <a href="https://wa.me/22395205556?text=<?= rawurlencode(($currentLang ?? 'fr') === 'en' ? 'Hello. I am interested in building electrical.' : 'Bonjour. Je suis intéressé par l\'électricité bâtiment pour en savoir plus.') ?>" target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all">
+                    <?= t('services.cta_whatsapp') ?>
                 </a>
             </div>
 
@@ -47,10 +47,10 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold mb-4">Climatisation</h3>
-                <p class="text-gray-300 mb-6 leading-relaxed">Installation et maintenance de systèmes de climatisation adaptés au climat malien. Solutions économes en énergie.</p>
-                <a href="https://wa.me/22395205556?text=Bonjour.%20Je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20climatisation%20pour%20en%20savoir%20plus." target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all">
-                    Demander un devis WhatsApp
+                <h3 class="text-xl font-bold mb-4"><?= t('services.ac_title') ?></h3>
+                <p class="text-gray-300 mb-6 leading-relaxed"><?= t('services.ac_desc') ?></p>
+                <a href="https://wa.me/22395205556?text=<?= rawurlencode(($currentLang ?? 'fr') === 'en' ? 'Hello. I am interested in air conditioning.' : 'Bonjour. Je suis intéressé par la climatisation pour en savoir plus.') ?>" target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all">
+                    <?= t('services.cta_whatsapp') ?>
                 </a>
             </div>
 
@@ -62,10 +62,10 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold mb-4">Maintenance</h3>
-                <p class="text-gray-300 mb-6 leading-relaxed">Maintenance préventive et corrective de vos installations solaires et électriques. Intervention rapide et efficace.</p>
-                <a href="https://wa.me/22395205556?text=Bonjour.%20Je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20maintenance%20pour%20en%20savoir%20plus." target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all">
-                    Demander un devis WhatsApp
+                <h3 class="text-xl font-bold mb-4"><?= t('services.maintenance_title') ?></h3>
+                <p class="text-gray-300 mb-6 leading-relaxed"><?= t('services.maintenance_desc') ?></p>
+                <a href="https://wa.me/22395205556?text=<?= rawurlencode(($currentLang ?? 'fr') === 'en' ? 'Hello. I am interested in maintenance.' : 'Bonjour. Je suis intéressé par la maintenance pour en savoir plus.') ?>" target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all">
+                    <?= t('services.cta_whatsapp') ?>
                 </a>
             </div>
 
@@ -76,10 +76,10 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold mb-4">Domotique</h3>
-                <p class="text-gray-300 mb-6 leading-relaxed">Automatisation et contrôle intelligent de votre habitat. Éclairage, sécurité, climatisation et énergie connectés.</p>
-                <a href="https://wa.me/22395205556?text=Bonjour.%20Je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20domotique%20pour%20en%20savoir%20plus." target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all">
-                    Demander un devis WhatsApp
+                <h3 class="text-xl font-bold mb-4"><?= t('services.domotic_title') ?></h3>
+                <p class="text-gray-300 mb-6 leading-relaxed"><?= t('services.domotic_desc') ?></p>
+                <a href="https://wa.me/22395205556?text=<?= rawurlencode(($currentLang ?? 'fr') === 'en' ? 'Hello. I am interested in home automation.' : 'Bonjour. Je suis intéressé par la domotique pour en savoir plus.') ?>" target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all">
+                    <?= t('services.cta_whatsapp') ?>
                 </a>
             </div>
 
@@ -90,10 +90,10 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold mb-4">Forage</h3>
-                <p class="text-gray-300 mb-6 leading-relaxed">Forage de puits et installation de pompes solaires pour l'accès à l'eau. Solutions autonomes et durables.</p>
-                <a href="https://wa.me/22395205556?text=Bonjour.%20Je%20suis%20int%C3%A9ress%C3%A9%20par%20le%20forage%20pour%20en%20savoir%20plus." target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all">
-                    Demander un devis WhatsApp
+                <h3 class="text-xl font-bold mb-4"><?= t('services.drilling_title') ?></h3>
+                <p class="text-gray-300 mb-6 leading-relaxed"><?= t('services.drilling_desc') ?></p>
+                <a href="https://wa.me/22395205556?text=<?= rawurlencode(($currentLang ?? 'fr') === 'en' ? 'Hello. I am interested in drilling.' : 'Bonjour. Je suis intéressé par le forage pour en savoir plus.') ?>" target="_blank" rel="noopener" class="inline-block bg-yellow-400 text-white px-6 py-3 rounded font-bold uppercase text-xs hover:bg-yellow-500 transition-all">
+                    <?= t('services.cta_whatsapp') ?>
                 </a>
             </div>
         </div>

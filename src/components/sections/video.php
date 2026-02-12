@@ -3,7 +3,7 @@
     <!-- Parallax background -->
     <div class="absolute inset-0 parallax">
         <img src="../assets/images/video-bg.jpeg" 
-             alt="Installation solaire en cours" 
+             alt="<?= htmlspecialchars(t('video.alt_bg')) ?>" 
              width="1920" 
              height="1080"
              class="w-full h-full object-cover" 
@@ -15,16 +15,16 @@
     <div class="relative z-10 max-w-7xl mx-auto px-4 text-center text-white fade-in">
         <div class="flex items-center justify-center gap-2 mb-6">
             <span class="w-10 h-[2px] bg-yellow-400"></span>
-            <span class="uppercase text-xs font-bold tracking-[0.2em] text-yellow-400">Découvrez notre expertise</span>
+            <span class="uppercase text-xs font-bold tracking-[0.2em] text-yellow-400"><?= t('video.badge') ?></span>
             <span class="w-10 h-[2px] bg-yellow-400"></span>
         </div>
 
         <h2 class="text-4xl md:text-6xl font-black mb-8">
-            AFRICIA TECH <span class="text-yellow-400">en action</span>
+            <?= t('video.title') ?> <span class="text-yellow-400"><?= t('video.title_highlight') ?></span>
         </h2>
 
         <p class="text-xl text-gray-200 mb-12 max-w-3xl mx-auto">
-            Découvrez nos réalisations et notre savoir-faire à travers cette vidéo présentant nos installations solaires et notre expertise technique.
+            <?= t('video.subtitle') ?>
         </p>
 
         <!-- Video container with play button overlay -->
@@ -33,7 +33,7 @@
                 <!-- Thumbnail + play overlay (hidden when video is playing) -->
                 <div id="video-poster" class="absolute inset-0 z-10 flex flex-col items-center justify-center cursor-pointer">
                     <img src="assets/images/laanding-video-thumbail.jpeg" 
-                         alt="Vidéo de présentation AFRICIA TECH - installations solaires" 
+                         alt="<?= htmlspecialchars(t('video.alt_thumb')) ?>" 
                          width="1280" 
                          height="720"
                          class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-80 transition-opacity"
@@ -44,7 +44,7 @@
                                 <path d="M8 5v14l11-7z" />
                             </svg>
                         </div>
-                        <p class="text-white font-semibold text-lg">Regarder la vidéo</p>
+                        <p class="text-white font-semibold text-lg"><?= t('video.watch') ?></p>
                     </div>
                 </div>
 
@@ -58,7 +58,7 @@
                        preload="metadata"
                        title="Vidéo de présentation AFRICIA TECH">
                     <track kind="captions" src="assets/videos/captions.vtt" srclang="fr" label="Français" default />
-                    Votre navigateur ne prend pas en charge la lecture de vidéos.
+                    <?= t('video.no_support') ?>
                 </video>
 
                 <!-- Download button (visible when video is shown) -->
@@ -69,7 +69,7 @@
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                     </svg>
-                    Télécharger
+                    <?= t('video.download') ?>
                 </a>
             </div>
         </div>
@@ -93,15 +93,15 @@
         <div class="mt-12 grid md:grid-cols-3 gap-8 max-w-4xl mx-auto slide-up">
             <div class="text-center">
                 <div class="text-3xl font-black text-yellow-400 mb-2">100+</div>
-                <div class="text-gray-300 text-sm">Installations réalisées</div>
+                <div class="text-gray-300 text-sm"><?= t('video.stats_installations') ?></div>
             </div>
             <div class="text-center">
                 <div class="text-3xl font-black text-yellow-400 mb-2">5+</div>
-                <div class="text-gray-300 text-sm">Années d'expérience</div>
+                <div class="text-gray-300 text-sm"><?= t('video.stats_years') ?></div>
             </div>
             <div class="text-center">
                 <div class="text-3xl font-black text-yellow-400 mb-2">24/7</div>
-                <div class="text-gray-300 text-sm">Support disponible</div>
+                <div class="text-gray-300 text-sm"><?= t('video.stats_support') ?></div>
             </div>
         </div>
     </div>

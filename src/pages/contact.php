@@ -1,7 +1,7 @@
 <?php
 $currentPage = 'contact';
-$pageTitle = 'Contact - AFRICIA TECH';
-$pageDescription = 'Contactez AFRICIA TECH pour vos projets énergétiques. Notre équipe est disponible pour répondre à toutes vos questions et vous accompagner dans vos projets solaires.';
+$pageTitleKey = 'page.contact.title';
+$pageDescriptionKey = 'page.contact.description';
 require __DIR__ . '/../layouts/main.php';
 ?>
 
@@ -10,7 +10,7 @@ require __DIR__ . '/../layouts/main.php';
     <div class="absolute inset-0 z-0">
         <img 
             src="../assets/images/final-cta.jpeg" 
-            alt="Contact AFRICIA TECH" 
+            alt="<?= htmlspecialchars(t('page_contact.contact_alt')) ?>" 
             width="1920" 
             height="1080"
             class="w-full h-full object-cover"
@@ -20,19 +20,18 @@ require __DIR__ . '/../layouts/main.php';
     <div class="relative z-10 max-w-7xl mx-auto px-4 text-center text-white">
         <div class="flex items-center justify-center gap-2 mb-4">
             <span class="w-10 h-[2px] bg-yellow-400"></span>
-            <span class="uppercase text-xs font-bold tracking-[0.2em] text-yellow-400">Contact</span>
+            <span class="uppercase text-xs font-bold tracking-[0.2em] text-yellow-400"><?= t('page_contact.hero_badge') ?></span>
             <span class="w-10 h-[2px] bg-yellow-400"></span>
         </div>
-        <h1 class="text-4xl md:text-6xl font-black mb-4">Contactez-<span class="text-yellow-400">nous</span></h1>
-        <p class="text-xl text-gray-300 max-w-3xl mx-auto">Notre équipe est à votre écoute pour répondre à toutes vos questions</p>
+        <h1 class="text-4xl md:text-6xl font-black mb-4"><?= t('page_contact.hero_title') ?><span class="text-yellow-400"><?= t('page_contact.hero_title_hl') ?></span></h1>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto"><?= t('page_contact.hero_subtitle') ?></p>
     </div>
 </section>
 
 <?php
-// Titres distincts du hero pour la section contact
-$contactSectionBadge = 'Comment nous joindre';
-$contactSectionTitle = 'Coordonnées et formulaire';
-$contactSectionSubtitle = 'Téléphone, email, adresse ou envoyez-nous un message';
+$contactSectionBadge = t('page_contact.section_badge');
+$contactSectionTitle = t('page_contact.section_title');
+$contactSectionSubtitle = t('page_contact.section_subtitle');
 ?>
 <!-- Contact Section Component -->
 <?php require __DIR__ . '/../components/sections/contact.php'; ?>
@@ -42,32 +41,32 @@ $contactSectionSubtitle = 'Téléphone, email, adresse ou envoyez-nous un messag
     <div class="max-w-7xl mx-auto px-4">
         <div class="grid md:grid-cols-2 gap-12">
             <div class="slide-up">
-                <h2 class="text-3xl font-black text-[#001c37] mb-6">Horaires d'ouverture</h2>
+                <h2 class="text-3xl font-black text-[#001c37] mb-6"><?= t('page_contact.hours_title') ?></h2>
                 <div class="bg-white rounded-xl p-8 shadow-lg">
                     <div class="space-y-4">
                         <div class="flex justify-between items-center pb-4 border-b border-gray-200">
-                            <span class="font-bold text-[#001c37]">Lundi - Vendredi</span>
-                            <span class="text-gray-600">8h00 - 18h00</span>
+                            <span class="font-bold text-[#001c37]"><?= t('page_contact.mon_fri') ?></span>
+                            <span class="text-gray-600"><?= t('page_contact.mon_fri_hours') ?></span>
                         </div>
                         <div class="flex justify-between items-center pb-4 border-b border-gray-200">
-                            <span class="font-bold text-[#001c37]">Samedi</span>
-                            <span class="text-gray-600">9h00 - 15h00</span>
+                            <span class="font-bold text-[#001c37]"><?= t('page_contact.saturday') ?></span>
+                            <span class="text-gray-600"><?= t('page_contact.saturday_hours') ?></span>
                         </div>
                         <div class="flex justify-between items-center">
-                            <span class="font-bold text-[#001c37]">Dimanche</span>
-                            <span class="text-gray-600">Fermé</span>
+                            <span class="font-bold text-[#001c37]"><?= t('page_contact.sunday') ?></span>
+                            <span class="text-gray-600"><?= t('page_contact.closed') ?></span>
                         </div>
                     </div>
                     <div class="mt-8 p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
                         <p class="text-sm text-gray-700">
-                            <span class="font-bold text-yellow-400">Urgence ?</span> Notre service de maintenance est disponible 24/7 pour les interventions d'urgence.
+                            <span class="font-bold text-yellow-400"><?= t('page_contact.urgency_title') ?></span> <?= t('page_contact.urgency_desc') ?>
                         </p>
                     </div>
                 </div>
             </div>
 
             <div class="slide-up">
-                <h2 class="text-3xl font-black text-[#001c37] mb-6">Pourquoi nous contacter ?</h2>
+                <h2 class="text-3xl font-black text-[#001c37] mb-6"><?= t('page_contact.why_title') ?></h2>
                 <div class="space-y-4">
                     <div class="flex items-start gap-4 bg-white p-6 rounded-xl shadow-lg">
                         <div class="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -76,8 +75,8 @@ $contactSectionSubtitle = 'Téléphone, email, adresse ou envoyez-nous un messag
                             </svg>
                         </div>
                         <div>
-                            <h3 class="font-bold text-[#001c37] mb-2">Devis gratuit</h3>
-                            <p class="text-gray-600 text-sm">Obtenez un devis détaillé et personnalisé pour votre projet sans engagement.</p>
+                            <h3 class="font-bold text-[#001c37] mb-2"><?= t('page_contact.quote_title') ?></h3>
+                            <p class="text-gray-600 text-sm"><?= t('page_contact.quote_desc') ?></p>
                         </div>
                     </div>
 
@@ -88,8 +87,8 @@ $contactSectionSubtitle = 'Téléphone, email, adresse ou envoyez-nous un messag
                             </svg>
                         </div>
                         <div>
-                            <h3 class="font-bold text-[#001c37] mb-2">Conseil expert</h3>
-                            <p class="text-gray-600 text-sm">Bénéficiez des conseils de nos experts pour choisir la meilleure solution.</p>
+                            <h3 class="font-bold text-[#001c37] mb-2"><?= t('page_contact.expert_title') ?></h3>
+                            <p class="text-gray-600 text-sm"><?= t('page_contact.expert_desc') ?></p>
                         </div>
                     </div>
 
@@ -100,8 +99,8 @@ $contactSectionSubtitle = 'Téléphone, email, adresse ou envoyez-nous un messag
                             </svg>
                         </div>
                         <div>
-                            <h3 class="font-bold text-[#001c37] mb-2">Réponse rapide</h3>
-                            <p class="text-gray-600 text-sm">Nous répondons à toutes vos demandes dans les plus brefs délais.</p>
+                            <h3 class="font-bold text-[#001c37] mb-2"><?= t('page_contact.fast_title') ?></h3>
+                            <p class="text-gray-600 text-sm"><?= t('page_contact.fast_desc') ?></p>
                         </div>
                     </div>
                 </div>
@@ -116,31 +115,31 @@ $contactSectionSubtitle = 'Téléphone, email, adresse ou envoyez-nous un messag
         <div class="text-center mb-16 slide-up">
             <div class="flex items-center justify-center gap-2 mb-4">
                 <span class="w-10 h-[2px] bg-yellow-400"></span>
-                <span class="uppercase text-xs font-bold tracking-[0.2em] text-yellow-400">Questions fréquentes</span>
+                <span class="uppercase text-xs font-bold tracking-[0.2em] text-yellow-400"><?= t('page_contact.faq_badge') ?></span>
                 <span class="w-10 h-[2px] bg-yellow-400"></span>
             </div>
-            <h2 class="text-4xl md:text-5xl font-black text-[#001c37] mb-6">Questions <span class="text-yellow-400">Fréquentes</span></h2>
+            <h2 class="text-4xl md:text-5xl font-black text-[#001c37] mb-6"><?= t('page_contact.faq_title') ?> <span class="text-yellow-400"><?= t('page_contact.faq_title_hl') ?></span></h2>
         </div>
 
         <div class="space-y-4">
             <div class="bg-gray-50 rounded-xl p-6 slide-up">
-                <h3 class="font-bold text-[#001c37] mb-2">Combien de temps prend une installation solaire ?</h3>
-                <p class="text-gray-600 text-sm">Une installation solaire résidentielle prend généralement entre 1 à 3 jours selon la taille du système. Pour les installations commerciales, cela peut prendre jusqu'à une semaine.</p>
+                <h3 class="font-bold text-[#001c37] mb-2"><?= t('page_contact.faq1_q') ?></h3>
+                <p class="text-gray-600 text-sm"><?= t('page_contact.faq1_a') ?></p>
             </div>
 
             <div class="bg-gray-50 rounded-xl p-6 slide-up">
-                <h3 class="font-bold text-[#001c37] mb-2">Quelle est la durée de vie des panneaux solaires ?</h3>
-                <p class="text-gray-600 text-sm">Les panneaux solaires ont une durée de vie moyenne de 25 à 30 ans. La plupart des fabricants garantissent une performance minimale de 80% après 25 ans d'utilisation.</p>
+                <h3 class="font-bold text-[#001c37] mb-2"><?= t('page_contact.faq2_q') ?></h3>
+                <p class="text-gray-600 text-sm"><?= t('page_contact.faq2_a') ?></p>
             </div>
 
             <div class="bg-gray-50 rounded-xl p-6 slide-up">
-                <h3 class="font-bold text-[#001c37] mb-2">Proposez-vous des facilités de paiement ?</h3>
-                <p class="text-gray-600 text-sm">Oui, nous proposons des solutions de financement adaptées à vos besoins. Contactez-nous pour discuter des options disponibles.</p>
+                <h3 class="font-bold text-[#001c37] mb-2"><?= t('page_contact.faq3_q') ?></h3>
+                <p class="text-gray-600 text-sm"><?= t('page_contact.faq3_a') ?></p>
             </div>
 
             <div class="bg-gray-50 rounded-xl p-6 slide-up">
-                <h3 class="font-bold text-[#001c37] mb-2">Les formations sont-elles certifiantes ?</h3>
-                <p class="text-gray-600 text-sm">Oui, toutes nos formations délivrent un certificat professionnel reconnu, attestant de vos compétences en énergies renouvelables ou électricité bâtiment.</p>
+                <h3 class="font-bold text-[#001c37] mb-2"><?= t('page_contact.faq4_q') ?></h3>
+                <p class="text-gray-600 text-sm"><?= t('page_contact.faq4_a') ?></p>
             </div>
         </div>
     </div>
