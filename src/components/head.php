@@ -84,7 +84,7 @@ $jsonLd = [
         'addressCountry' => 'ML',
     ],
     'telephone' => '+22395205556',
-    'email' => 'africatech@gmail.com',
+    'email' => 'africatech-mali@gmail.com',
     'sameAs' => [
         'https://www.facebook.com/profile.php?id=100071542517989',
         'https://www.tiktok.com/@africa.tech4',

@@ -138,14 +138,14 @@ $safeEmail = preg_replace('/[\x00-\x1F\x7F\r\n]/', '', $email);
 $safeName = preg_replace('/[\x00-\x1F\x7F\r\n]/', '', $name);
 $safeSubject = preg_replace('/[\x00-\x1F\x7F\r\n]/', '', $subjectLabel);
 
-$to = 'africatech@gmail.com';
+$to = 'africatech-mali@gmail.com';
 $emailSubject = 'Nouveau message de contact - ' . $safeSubject;
 
 // Template HTML email professionnel (structure table pour compatibilité clients mail)
 $emailBody = getEmailTemplate($safeName, $safeEmail, $phone, $safeSubject, $message);
 
 // Adresses fixes pour From (délivrabilité)
-$fromEmail = 'africatech@gmail.com';
+$fromEmail = 'africatech-mali@gmail.com';
 $headers = [
     'MIME-Version: 1.0',
     'Content-Type: text/html; charset=UTF-8',

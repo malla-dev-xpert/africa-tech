@@ -15,7 +15,7 @@ $urlLangEn = $basePrefix . $scriptName . '?' . http_build_query($getParams);
                 <svg class="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                 </svg>
-                africatech@gmail.com
+                africatech-mali@gmail.com
             </span>
             <span class="flex items-center gap-2">
                 <svg class="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
