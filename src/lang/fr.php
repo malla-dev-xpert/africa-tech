@@ -130,6 +130,26 @@ return [
     'testimonials.title' => 'Ils nous font',
     'testimonials.title_highlight' => 'confiance',
 
+    // Gallery section
+    'gallery.badge' => 'Galerie',
+    'gallery.title' => 'Nos',
+    'gallery.title_highlight' => 'réalisations',
+    'gallery.alt_1' => 'Réalisation AFRICIA TECH - installation',
+    'gallery.alt_2' => 'Projet solaire - AFRICIA TECH',
+    'gallery.alt_3' => 'Installation et formation',
+    'gallery.alt_4' => 'Vidéo de présentation',
+    'gallery.alt_5' => 'Service et expertise',
+    'gallery.alt_6' => 'Projet énergie solaire',
+    'gallery.alt_7' => 'Réalisation - galerie',
+    'gallery.alt_8' => 'Projet - galerie',
+    'gallery.alt_9' => 'Installation - galerie',
+    'gallery.alt_10' => 'AFRICIA TECH réalisations',
+    'gallery.alt_11' => 'Projet solaire - galerie',
+    'gallery.alt_12' => 'Réalisation - galerie',
+    'gallery.open_large' => 'Voir en grand',
+    'gallery.lightbox_label' => 'Image en grand',
+    'gallery.close' => 'Fermer',
+
     // CTA Final
     'cta.alt' => 'AFRICIA TECH - Prêt à passer à l\'énergie solaire',
     'cta.title' => 'Prêt à passer à l\'',

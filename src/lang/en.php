@@ -130,6 +130,26 @@ return [
     'testimonials.title' => 'They trust',
     'testimonials.title_highlight' => 'us',
 
+    // Gallery section
+    'gallery.badge' => 'Gallery',
+    'gallery.title' => 'Our',
+    'gallery.title_highlight' => 'work',
+    'gallery.alt_1' => 'AFRICIA TECH project - installation',
+    'gallery.alt_2' => 'Solar project - AFRICIA TECH',
+    'gallery.alt_3' => 'Installation and training',
+    'gallery.alt_4' => 'Presentation video',
+    'gallery.alt_5' => 'Service and expertise',
+    'gallery.alt_6' => 'Solar energy project',
+    'gallery.alt_7' => 'Project - gallery',
+    'gallery.alt_8' => 'Project - gallery',
+    'gallery.alt_9' => 'Installation - gallery',
+    'gallery.alt_10' => 'AFRICIA TECH projects',
+    'gallery.alt_11' => 'Solar project - gallery',
+    'gallery.alt_12' => 'Project - gallery',
+    'gallery.open_large' => 'View full size',
+    'gallery.lightbox_label' => 'Full size image',
+    'gallery.close' => 'Close',
+
     // CTA Final
     'cta.alt' => 'AFRICIA TECH - Ready to switch to solar energy',
     'cta.title' => 'Ready to switch to',

@@ -39,6 +39,9 @@ require __DIR__ . '/../layouts/main.php';
 <!-- Formations Section Component -->
 <?php require __DIR__ . '/../components/sections/formations.php'; ?>
 
+<!-- Gallery Section Component -->
+<?php require __DIR__ . '/../components/sections/gallery.php'; ?>
+
 <!-- Testimonials Section Component -->
 <?php require __DIR__ . '/../components/sections/testimonials.php'; ?>
 
