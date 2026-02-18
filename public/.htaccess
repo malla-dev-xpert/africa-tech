@@ -7,6 +7,13 @@
 # Page d'accueil par défaut
 DirectoryIndex index.php
 
+# Limites d'upload (admin galerie – plusieurs images) – uniquement si mod_php
+<IfModule mod_php.c>
+    php_value max_file_uploads 100
+    php_value upload_max_filesize 50M
+    php_value post_max_size 55M
+</IfModule>
+
 # Pas de listing des répertoires
 Options -Indexes
 

@@ -161,9 +161,12 @@ if (isset($_GET['deleted']) && $_GET['deleted'] === '1') {
 <body class="bg-slate-50 text-gray-800 min-h-screen font-sans">
 
     <header class="bg-[#001c37] text-white shadow">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-2">
             <h1 class="text-xl font-bold">Administration – Produits</h1>
-            <a href="index.php" class="text-yellow-400 hover:text-yellow-300 text-sm font-medium">← Retour au site</a>
+            <nav class="flex items-center gap-4">
+                <a href="admin-gallery.php" class="text-white/90 hover:text-yellow-400 text-sm font-medium">Galerie</a>
+                <a href="index.php" class="text-yellow-400 hover:text-yellow-300 text-sm font-medium">← Retour au site</a>
+            </nav>
         </div>
     </header>
 

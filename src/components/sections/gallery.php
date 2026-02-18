@@ -1,11 +1,11 @@
 <?php
 /**
- * Gallery Section – Style Mosaïque / Bento
- * Disposition irrégulière pour imiter l'image de référence.
+ * Gallery Section – Images depuis la BDD (admin) ou liste statique en fallback.
+ * Même design : mosaïque / bento, hover, lightbox.
  */
 
-// Liste de tes images (inchangé)
-$galleryImages = [
+// Images statiques (fallback si aucune image en BDD)
+$galleryImagesStatic = [
     ['src' => '../assets/images/hero.jpeg', 'alt' => t('gallery.alt_1')],
     ['src' => '../assets/images/landing-about.jpeg', 'alt' => t('gallery.alt_2')],
     ['src' => '../assets/images/video-bg.jpeg', 'alt' => t('gallery.alt_3')],
@@ -19,6 +19,29 @@ $galleryImages = [
     ['src' => '../assets/images/service-hero.jpeg', 'alt' => t('gallery.alt_11')],
     ['src' => '../assets/images/laanding-video-thumbail.jpeg', 'alt' => t('gallery.alt_12')],
 ];
+
+$galleryImages = $galleryImagesStatic;
+try {
+    if (!isset($pdo)) {
+        require_once __DIR__ . '/../../config/db.php';
+    }
+    $stmt = $pdo->query("SELECT imageUrl, alt_text FROM gallery_images ORDER BY sort_order ASC, created_at ASC");
+    if ($stmt) {
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if (count($rows) > 0) {
+            $prefix = isset($basePath) ? rtrim($basePath, '/') . '/' : '/';
+            $galleryImages = [];
+            foreach ($rows as $r) {
+                $galleryImages[] = [
+                    'src'  => $prefix . ltrim($r['imageUrl'], '/'),
+                    'alt'  => $r['alt_text'] !== '' ? $r['alt_text'] : t('gallery.alt_1'),
+                ];
+            }
+        }
+    }
+} catch (Throwable $e) {
+    $galleryImages = $galleryImagesStatic;
+}
 
 /**
  * Configuration de la mosaïque (Grid Layout)
