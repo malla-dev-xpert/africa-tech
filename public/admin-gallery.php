@@ -153,7 +153,7 @@ if (isset($_GET['deleted']) && $_GET['deleted'] === '1') {
             <h1 class="text-xl font-bold">Administration – Galerie</h1>
             <nav class="flex items-center gap-4">
                 <a href="admin.php" class="text-white/90 hover:text-yellow-400 text-sm font-medium">Produits</a>
-                <a href="index.php" class="text-yellow-400 hover:text-yellow-300 text-sm font-medium">← Retour au site</a>
+                <a href="/" class="text-yellow-400 hover:text-yellow-300 text-sm font-medium">← Retour au site</a>
             </nav>
         </div>
     </header>

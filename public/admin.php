@@ -173,7 +173,7 @@ if (isset($_GET['deleted']) && $_GET['deleted'] === '1') {
                     <span class="w-2 h-2 rounded-full bg-yellow-400"></span>
                     Produits
                 </a>
-                <a href="index.php" class="flex items-center gap-3 px-4 py-3 rounded-xl text-white/80 hover:text-white hover:bg-white/10 transition-colors">
+                <a href="/" class="flex items-center gap-3 px-4 py-3 rounded-xl text-white/80 hover:text-white hover:bg-white/10 transition-colors">
                     Retour au site
                 </a>
             </nav>
