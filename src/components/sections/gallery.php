@@ -23,7 +23,7 @@ $galleryImagesStatic = [
 $galleryImages = $galleryImagesStatic;
 try {
     if (!isset($pdo)) {
-        require_once __DIR__ . '/../../config/db.php';
+        require __DIR__ . '/../../config/db.php';
     }
     $stmt = $pdo->query("SELECT imageUrl, alt_text FROM gallery_images ORDER BY sort_order ASC, created_at ASC");
     if ($stmt) {

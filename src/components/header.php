@@ -1,12 +1,24 @@
 <?php
-$basePrefix = isset($basePath) && $basePath !== '' ? $basePath . '/' : '';
+$basePrefix = isset($basePath) && $basePath !== '' ? '/' . trim($basePath, '/') : '';
 $langParam = ($currentLang ?? 'fr') !== 'fr' ? '?lang=' . ($currentLang ?? 'fr') : '';
 $scriptName = basename($_SERVER['SCRIPT_NAME'] ?? 'index.php');
-$getParams = $_GET;
-$getParams['lang'] = 'fr';
-$urlLangFr = $basePrefix . $scriptName . '?' . http_build_query($getParams);
-$getParams['lang'] = 'en';
-$urlLangEn = $basePrefix . $scriptName . '?' . http_build_query($getParams);
+$scriptSlug = preg_replace('/\.php$/i', '', $scriptName);
+$scriptSlug = $scriptSlug === 'index' ? '' : $scriptSlug;
+$currentRoute = ($basePrefix !== '' ? $basePrefix : '') . ($scriptSlug !== '' ? '/' . $scriptSlug : '/');
+
+$routeFor = static function (string $slug) use ($basePrefix): string {
+    if ($slug === '' || $slug === 'index') {
+        return ($basePrefix !== '' ? $basePrefix : '') . '/';
+    }
+    return ($basePrefix !== '' ? $basePrefix : '') . '/' . ltrim($slug, '/');
+};
+
+$withLang = static function (string $url, string $lang): string {
+    return $lang === 'fr' ? $url : $url . '?lang=' . rawurlencode($lang);
+};
+
+$urlLangFr = $withLang($currentRoute, 'fr');
+$urlLangEn = $withLang($currentRoute, 'en');
 ?>
 <div class="bg-[#001c37] text-gray-300 py-2 px-4 hidden lg:block border-b border-white/10 text-xs">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
@@ -48,17 +60,17 @@ $urlLangEn = $basePrefix . $scriptName . '?' . http_build_query($getParams);
 
 <header class="bg-[#001c37]/90 backdrop-blur-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-        <a href="<?= $basePrefix ?>index.php<?= $langParam ?>" class="flex items-center gap-2 hover:opacity-90 transition-opacity">
-            <img src="<?= $basePrefix ?>assets/images/logo.png" alt="<?= htmlspecialchars(t('site.name')) ?>" width="160" height="40" class="h-10 w-auto object-contain">
+        <a href="<?= $withLang($routeFor('index'), $currentLang ?? 'fr') ?>" class="flex items-center gap-2 hover:opacity-90 transition-opacity">
+            <img src="<?= $routeFor('assets/images/logo.png') ?>" alt="<?= htmlspecialchars(t('site.name')) ?>" width="160" height="40" class="h-10 w-auto object-contain">
         </a>
 
         <nav class="hidden lg:flex items-center gap-8 text-white font-semibold text-sm">
-            <a href="<?= $basePrefix ?>index.php<?= $langParam ?>" class="<?php echo ($currentPage === 'accueil') ? 'text-yellow-400' : 'hover:text-yellow-400'; ?> transition-colors"><?= t('nav.home') ?></a>
-            <a href="<?= $basePrefix ?>about.php<?= $langParam ?>" class="<?php echo ($currentPage === 'about') ? 'text-yellow-400' : 'hover:text-yellow-400'; ?> transition-colors"><?= t('nav.about') ?></a>
-            <a href="<?= $basePrefix ?>services.php<?= $langParam ?>" class="<?php echo ($currentPage === 'services') ? 'text-yellow-400' : 'hover:text-yellow-400'; ?> transition-colors"><?= t('nav.services') ?></a>
-            <a href="<?= $basePrefix ?>products.php<?= $langParam ?>" class="<?php echo ($currentPage === 'products') ? 'text-yellow-400' : 'hover:text-yellow-400'; ?> transition-colors"><?= t('nav.products') ?></a>
-            <a href="<?= $basePrefix ?>formations.php<?= $langParam ?>" class="<?php echo ($currentPage === 'formations') ? 'text-yellow-400' : 'hover:text-yellow-400'; ?> transition-colors"><?= t('nav.trainings') ?></a>
-            <a href="<?= $basePrefix ?>contact.php<?= $langParam ?>" class="<?php echo ($currentPage === 'contact') ? 'text-yellow-400' : 'hover:text-yellow-400'; ?> transition-colors"><?= t('nav.contact') ?></a>
+            <a href="<?= $withLang($routeFor('index'), $currentLang ?? 'fr') ?>" class="<?php echo ($currentPage === 'accueil') ? 'text-yellow-400' : 'hover:text-yellow-400'; ?> transition-colors"><?= t('nav.home') ?></a>
+            <a href="<?= $withLang($routeFor('about'), $currentLang ?? 'fr') ?>" class="<?php echo ($currentPage === 'about') ? 'text-yellow-400' : 'hover:text-yellow-400'; ?> transition-colors"><?= t('nav.about') ?></a>
+            <a href="<?= $withLang($routeFor('services'), $currentLang ?? 'fr') ?>" class="<?php echo ($currentPage === 'services') ? 'text-yellow-400' : 'hover:text-yellow-400'; ?> transition-colors"><?= t('nav.services') ?></a>
+            <a href="<?= $withLang($routeFor('products'), $currentLang ?? 'fr') ?>" class="<?php echo ($currentPage === 'products') ? 'text-yellow-400' : 'hover:text-yellow-400'; ?> transition-colors"><?= t('nav.products') ?></a>
+            <a href="<?= $withLang($routeFor('formations'), $currentLang ?? 'fr') ?>" class="<?php echo ($currentPage === 'formations') ? 'text-yellow-400' : 'hover:text-yellow-400'; ?> transition-colors"><?= t('nav.trainings') ?></a>
+            <a href="<?= $withLang($routeFor('contact'), $currentLang ?? 'fr') ?>" class="<?php echo ($currentPage === 'contact') ? 'text-yellow-400' : 'hover:text-yellow-400'; ?> transition-colors"><?= t('nav.contact') ?></a>
         </nav>
 
         <div class="hidden lg:flex items-center gap-6 text-white border-l border-white/20 pl-6">
@@ -101,16 +113,16 @@ $urlLangEn = $basePrefix . $scriptName . '?' . http_build_query($getParams);
 
     <!-- Navigation links - centered vertically -->
     <nav class="flex-1 flex flex-col items-center justify-center gap-8 text-2xl text-white">
-        <a href="<?= $basePrefix ?>index.php<?= $langParam ?>" class="<?php echo ($currentPage === 'accueil') ? 'text-yellow-400' : 'hover:text-yellow-400'; ?> transition-colors"><?= t('nav.home') ?></a>
-        <a href="<?= $basePrefix ?>about.php<?= $langParam ?>" class="<?php echo ($currentPage === 'about') ? 'text-yellow-400' : 'hover:text-yellow-400'; ?> transition-colors"><?= t('nav.about') ?></a>
-        <a href="<?= $basePrefix ?>services.php<?= $langParam ?>" class="<?php echo ($currentPage === 'services') ? 'text-yellow-400' : 'hover:text-yellow-400'; ?> transition-colors"><?= t('nav.services') ?></a>
-        <a href="<?= $basePrefix ?>products.php<?= $langParam ?>" class="<?php echo ($currentPage === 'products') ? 'text-yellow-400' : 'hover:text-yellow-400'; ?> transition-colors"><?= t('nav.products') ?></a>
-        <a href="<?= $basePrefix ?>formations.php<?= $langParam ?>" class="<?php echo ($currentPage === 'formations') ? 'text-yellow-400' : 'hover:text-yellow-400'; ?> transition-colors"><?= t('nav.trainings') ?></a>
+        <a href="<?= $withLang($routeFor('index'), $currentLang ?? 'fr') ?>" class="<?php echo ($currentPage === 'accueil') ? 'text-yellow-400' : 'hover:text-yellow-400'; ?> transition-colors"><?= t('nav.home') ?></a>
+        <a href="<?= $withLang($routeFor('about'), $currentLang ?? 'fr') ?>" class="<?php echo ($currentPage === 'about') ? 'text-yellow-400' : 'hover:text-yellow-400'; ?> transition-colors"><?= t('nav.about') ?></a>
+        <a href="<?= $withLang($routeFor('services'), $currentLang ?? 'fr') ?>" class="<?php echo ($currentPage === 'services') ? 'text-yellow-400' : 'hover:text-yellow-400'; ?> transition-colors"><?= t('nav.services') ?></a>
+        <a href="<?= $withLang($routeFor('products'), $currentLang ?? 'fr') ?>" class="<?php echo ($currentPage === 'products') ? 'text-yellow-400' : 'hover:text-yellow-400'; ?> transition-colors"><?= t('nav.products') ?></a>
+        <a href="<?= $withLang($routeFor('formations'), $currentLang ?? 'fr') ?>" class="<?php echo ($currentPage === 'formations') ? 'text-yellow-400' : 'hover:text-yellow-400'; ?> transition-colors"><?= t('nav.trainings') ?></a>
     </nav>
 
     <!-- Contact button - fixed at bottom -->
     <div class="pb-8 px-4 w-full">
-        <a href="<?= $basePrefix ?>contact.php<?= $langParam ?>" class="block w-full <?php echo ($currentPage === 'contact') ? 'bg-yellow-400 text-white' : 'bg-white text-[#001c37]'; ?> px-10 py-5 rounded font-bold uppercase text-sm hover:bg-yellow-400 hover:text-white transition-all text-center">
+        <a href="<?= $withLang($routeFor('contact'), $currentLang ?? 'fr') ?>" class="block w-full <?php echo ($currentPage === 'contact') ? 'bg-yellow-400 text-white' : 'bg-white text-[#001c37]'; ?> px-10 py-5 rounded font-bold uppercase text-sm hover:bg-yellow-400 hover:text-white transition-all text-center">
             <?= t('nav.contact') ?>
         </a>
     </div>

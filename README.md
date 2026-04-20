@@ -1,6 +1,6 @@
 # Africa Tech - Quickstart local
 
-Projet PHP avec dossier public `public/` et connexion MySQL via `src/config/db.php`.
+Projet PHP avec pages d'entree a la racine et connexion MySQL via `src/config/db.php`.
 
 ## 1) Prerequis
 
@@ -39,17 +39,19 @@ Puis verifier que `DB_NAME` dans `.env` correspond bien au nom de la base.
 Depuis la racine du projet:
 
 ```bash
-php -S localhost:8000 -t public
+php -S localhost:8000 -t public public/router.php
 ```
 
 Ouvrir ensuite:
 
 - `http://localhost:8000`
 - `http://localhost:8000/admin.php` (interface admin)
+- `http://localhost:8000/products` (URL propre)
 
 ## 5) Structure utile
 
-- `public/` : point d'entree web (pages, assets, API)
+- `/*.php` : pages d'entree web (index, about, services, products, etc.)
+- `public/assets`, `public/api`, `public/uploads` : ressources exposees via `.htaccess` racine
 - `src/config/app.php` : configuration app + langue
 - `src/config/db.php` : chargement `.env` + connexion PDO MySQL
 
@@ -57,4 +59,5 @@ Ouvrir ensuite:
 
 - **Erreur connexion BDD**: verifier MySQL, credentials `.env`, et existence de la base.
 - **Page blanche / erreur PHP**: lancer le serveur dans un terminal et lire les logs d'erreur affiches.
-- **Assets introuvables**: verifier l'URL utilisee (`localhost:8000`) et que le serveur pointe bien sur `public/`.
+- **URLs propres ne marchent pas**: en Apache, activer `mod_rewrite` et `AllowOverride All` pour prendre en charge `.htaccess`.
+- **Assets introuvables**: verifier que le fichier `.htaccess` racine est bien deploye et que les requetes `/assets`, `/api`, `/uploads` sont autorisees.

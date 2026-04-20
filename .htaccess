@@ -1,32 +1,39 @@
 # =============================================================================
-# Africa Tech - Point d'entrée unique vers public/ (DocumentRoot = racine du projet)
+# Africa Tech - Racine web (pages PHP à la racine + assets/api/uploads dans public/)
 # =============================================================================
-# Si vous pouvez configurer Apache, préférez DocumentRoot = .../public/ et
-# supprimez ce fichier. Sinon ce .htaccess redirige tout vers public/.
-# =============================================================================
+
+DirectoryIndex index.php
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /
 
-    # Ne pas réécrire si la requête pointe déjà vers public/ (évite public/public/...)
-    RewriteCond %{REQUEST_URI} ^/public/ [NC]
+    # Bloquer l'accès au dossier logs.
+    RewriteRule ^logs(?:/|$) - [F,L]
+
+    # URL canonique sans extension: /about.php -> /about
+    RewriteCond %{THE_REQUEST} \s/+(.+?)\.php(?:[\s?]|$) [NC]
+    RewriteCond %1 !^(index|sitemap|admin|admin-gallery)$ [NC]
+    RewriteRule ^ %1 [R=301,L,NE]
+
+    # Servir les fichiers/répertoires réels sans réécriture.
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
     RewriteRule ^ - [L]
 
-    # Racine du site → public/index.php
-    RewriteRule ^$ public/index.php [L]
+    # Exposer assets/api/uploads/robots.txt depuis public/ sans déplacer les dossiers.
+    RewriteRule ^(assets|api|uploads)/(.*)$ public/$1/$2 [L,NC]
+    RewriteRule ^robots\.txt$ public/robots.txt [L,NC]
 
-    # Toutes les autres requêtes → public/ (ex: /about.php → public/about.php)
-    RewriteRule ^(.+)$ public/$1 [L]
+    # sitemap.xml -> sitemap.php
+    RewriteRule ^sitemap\.xml$ sitemap.php [L,NC]
+
+    # URL propre vers script PHP: /about -> /about.php
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^(.+)$ $1.php [L,QSA]
 </IfModule>
 
-# Si mod_rewrite est désactivé, redirection HTTP explicite vers public/
-<IfModule !mod_rewrite.c>
-    RedirectMatch 302 ^/$ /public/index.php
-    RedirectMatch 302 ^/(.*)$ /public/$1
-</IfModule>
-
-# Interdire l'accès aux fichiers sensibles à la racine (hors public/)
+# Fichiers sensibles
 <FilesMatch "^\.">
     Require all denied
 </FilesMatch>

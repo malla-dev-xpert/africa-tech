@@ -180,7 +180,7 @@ require __DIR__ . '/../layouts/main.php';
         <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
             <?= t('page_about.cta_subtitle') ?>
         </p>
-        <a href="<?= (isset($basePath) && $basePath !== '' ? $basePath . '/' : '') ?>contact.php<?= (isset($currentLang) && $currentLang !== 'fr') ? '?lang=' . $currentLang : '' ?>" class="inline-block bg-yellow-400 text-white px-12 py-6 rounded-lg font-bold uppercase text-lg hover:bg-yellow-500 transition-all shadow-lg hover:shadow-xl">
+        <a href="<?= (isset($basePath) && $basePath !== '' ? '/' . trim($basePath, '/') : '') ?>/contact<?= (isset($currentLang) && $currentLang !== 'fr') ? '?lang=' . $currentLang : '' ?>" class="inline-block bg-yellow-400 text-white px-12 py-6 rounded-lg font-bold uppercase text-lg hover:bg-yellow-500 transition-all shadow-lg hover:shadow-xl">
             <?= t('page_about.cta_btn') ?>
         </a>
     </div>

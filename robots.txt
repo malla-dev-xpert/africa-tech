@@ -1,0 +1,14 @@
+# robots.txt pour AFRICIA TECH
+# https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Allow: /
+
+# Fichiers et dossiers à ne pas indexer
+Disallow: /admin
+Disallow: /admin.php
+Disallow: /logs/
+Disallow: /api/
+
+# Sitemap canonical
+Sitemap: /sitemap.xml

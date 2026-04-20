@@ -21,7 +21,7 @@ $whatsappBase = 'https://wa.me/22395205556?text=' . rawurlencode(t('products.wa_
         </div>
 
         <?php if ($showFilters): ?>
-        <form method="get" action="products.php" class="mb-10 slide-up flex flex-wrap items-end gap-4">
+        <form method="get" action="/products" class="mb-10 slide-up flex flex-wrap items-end gap-4">
             <?php if (!empty($currentLang) && $currentLang !== 'fr'): ?><input type="hidden" name="lang" value="<?= htmlspecialchars($currentLang) ?>" /><?php endif; ?>
             <div class="flex-1 min-w-[200px]">
                 <label for="products-q" class="block text-sm font-semibold text-gray-700 mb-1"><?= t('products.search_placeholder') ?></label>
@@ -43,7 +43,7 @@ $whatsappBase = 'https://wa.me/22395205556?text=' . rawurlencode(t('products.wa_
             </div>
             <button type="submit" class="px-5 py-2.5 bg-[#001c37] text-white font-bold rounded-xl hover:bg-yellow-500 hover:text-[#001c37] transition-colors duration-300" aria-label="<?= htmlspecialchars(t('products.filter_btn')) ?>"><?= t('products.filter_btn') ?></button>
             <?php if (!empty($_GET['q']) || isset($_GET['min_price']) && $_GET['min_price'] !== '' || isset($_GET['max_price']) && $_GET['max_price'] !== ''): ?>
-            <a href="products.php<?= (isset($currentLang) && $currentLang !== 'fr') ? '?lang=' . $currentLang : '' ?>" class="px-5 py-2.5 border border-gray-300 rounded-xl font-medium text-gray-700 hover:bg-gray-50"><?= t('products.reset_btn') ?></a>
+            <a href="/products<?= (isset($currentLang) && $currentLang !== 'fr') ? '?lang=' . $currentLang : '' ?>" class="px-5 py-2.5 border border-gray-300 rounded-xl font-medium text-gray-700 hover:bg-gray-50"><?= t('products.reset_btn') ?></a>
             <?php endif; ?>
         </form>
         <?php endif; ?>
@@ -59,7 +59,7 @@ $whatsappBase = 'https://wa.me/22395205556?text=' . rawurlencode(t('products.wa_
         <?php else: ?>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 <?php foreach ($products as $p): 
-                    $prodUrl = 'https://' . $_SERVER['HTTP_HOST'] . '/products.php?product_id=' . $p['id'];
+                    $prodUrl = 'https://' . $_SERVER['HTTP_HOST'] . '/products?product_id=' . $p['id'];
                     $waMessage = t('products.wa_intro') . " " . ($p['name'] ?? '') . " (" . ($p['price'] ?? '') . ").\n\n" . t('products.wa_link_text') . " " . $prodUrl;
                     $waLink = "https://wa.me/22395205556?text=" . rawurlencode($waMessage);
                 ?>
@@ -84,7 +84,7 @@ $whatsappBase = 'https://wa.me/22395205556?text=' . rawurlencode(t('products.wa_
 
         <?php if ($productsShowAllLink): ?>
             <div class="text-center mt-12 slide-up">
-                <a href="products.php<?= (isset($currentLang) && $currentLang !== 'fr') ? '?lang=' . $currentLang : '' ?>" class="inline-flex items-center gap-2 px-8 py-4 bg-[#001c37] text-white font-bold rounded-xl hover:bg-yellow-500 hover:text-[#001c37] transition-all duration-300">
+                <a href="/products<?= (isset($currentLang) && $currentLang !== 'fr') ? '?lang=' . $currentLang : '' ?>" class="inline-flex items-center gap-2 px-8 py-4 bg-[#001c37] text-white font-bold rounded-xl hover:bg-yellow-500 hover:text-[#001c37] transition-all duration-300">
                     <?= t('products.see_all') ?>
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                 </a>

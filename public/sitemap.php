@@ -16,11 +16,11 @@ $today = date('Y-m-d');
 
 $urls = [
     ['path' => '/', 'priority' => '1.0', 'changefreq' => 'weekly'],
-    ['path' => '/about.php', 'priority' => '0.9', 'changefreq' => 'monthly'],
-    ['path' => '/services.php', 'priority' => '0.9', 'changefreq' => 'monthly'],
-    ['path' => '/products.php', 'priority' => '0.9', 'changefreq' => 'weekly'],
-    ['path' => '/formations.php', 'priority' => '0.9', 'changefreq' => 'monthly'],
-    ['path' => '/contact.php', 'priority' => '0.8', 'changefreq' => 'monthly'],
+    ['path' => '/about', 'priority' => '0.9', 'changefreq' => 'monthly'],
+    ['path' => '/services', 'priority' => '0.9', 'changefreq' => 'monthly'],
+    ['path' => '/products', 'priority' => '0.9', 'changefreq' => 'weekly'],
+    ['path' => '/formations', 'priority' => '0.9', 'changefreq' => 'monthly'],
+    ['path' => '/contact', 'priority' => '0.8', 'changefreq' => 'monthly'],
 ];
 
 echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";

@@ -21,10 +21,20 @@ try {
         $sql .= " AND name LIKE ?";
         $params[] = '%' . $q . '%';
     }
-    $sql .= " ORDER BY created_at DESC";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute($params);
-    $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    // Certains environnements n'ont pas encore la colonne created_at.
+    // On tente d'abord le tri récent, puis fallback sur id pour rester compatible.
+    $orderedSql = $sql . " ORDER BY created_at DESC";
+    try {
+        $stmt = $pdo->prepare($orderedSql);
+        $stmt->execute($params);
+        $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        $fallbackSql = $sql . " ORDER BY id DESC";
+        $stmt = $pdo->prepare($fallbackSql);
+        $stmt->execute($params);
+        $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
     if ($minPrice !== null || $maxPrice !== null) {
         $filtered = [];
@@ -40,7 +50,7 @@ try {
     // --- Logic for Open Graph Tags (WhatsApp Preview) ---
     if (isset($_GET['product_id']) && !empty($_GET['product_id'])) {
         $prodId = (int) $_GET['product_id'];
-        $stmtSingle = $pdo->prepare("SELECT name, description, imageUrl FROM products WHERE id = ?");
+        $stmtSingle = $pdo->prepare("SELECT name, description, price, imageUrl FROM products WHERE id = ?");
         $stmtSingle->execute([$prodId]);
         $singleProduct = $stmtSingle->fetch(PDO::FETCH_ASSOC);
 
