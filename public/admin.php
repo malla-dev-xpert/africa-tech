@@ -158,19 +158,39 @@ if (isset($_GET['deleted']) && $_GET['deleted'] === '1') {
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/faveicon.png" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="bg-slate-50 text-gray-800 min-h-screen font-sans">
-
-    <header class="bg-[#001c37] text-white shadow">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-2">
-            <h1 class="text-xl font-bold">Administration – Produits</h1>
-            <nav class="flex items-center gap-4">
-                <a href="admin-gallery.php" class="text-white/90 hover:text-yellow-400 text-sm font-medium">Galerie</a>
-                <a href="index.php" class="text-yellow-400 hover:text-yellow-300 text-sm font-medium">← Retour au site</a>
+<body class="bg-slate-100 text-gray-800 min-h-screen font-sans">
+    <div class="min-h-screen lg:grid lg:grid-cols-[280px_1fr]">
+        <aside class="bg-[#001c37] text-white p-6 lg:sticky lg:top-0 lg:h-screen shadow-xl">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-yellow-400 text-[#001c37] font-extrabold flex items-center justify-center">AT</div>
+                <div>
+                    <p class="text-xs text-white/70 uppercase tracking-wide">Dashboard</p>
+                    <h1 class="text-lg font-bold">Administration</h1>
+                </div>
+            </div>
+            <nav class="mt-8 space-y-2">
+                <a href="admin.php" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/10 border border-white/20 font-semibold">
+                    <span class="w-2 h-2 rounded-full bg-yellow-400"></span>
+                    Produits
+                </a>
+                <a href="index.php" class="flex items-center gap-3 px-4 py-3 rounded-xl text-white/80 hover:text-white hover:bg-white/10 transition-colors">
+                    Retour au site
+                </a>
             </nav>
-        </div>
-    </header>
+        </aside>
 
-    <main class="max-w-7xl mx-auto px-4 py-8">
+        <main class="px-4 sm:px-6 lg:px-10 py-8">
+            <header class="mb-6 flex flex-wrap items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-[#001c37]">Produits</h2>
+                    <p class="text-sm text-gray-500 mt-1">Liste des produits enregistrés (<?= $totalProducts ?>)</p>
+                </div>
+                <button type="button" id="open-add-modal" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#001c37] text-white font-semibold hover:bg-[#003366] transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                    Ajouter un produit
+                </button>
+            </header>
+
         <?php if ($message): ?>
             <div class="mb-6 p-4 bg-green-100 border border-green-400 text-green-800 rounded-xl" role="alert">
                 <?= htmlspecialchars($message) ?>
@@ -182,65 +202,18 @@ if (isset($_GET['deleted']) && $_GET['deleted'] === '1') {
             </div>
         <?php endif; ?>
 
-        <!-- Formulaire d'ajout -->
-        <section class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 mb-10">
-            <h2 class="text-2xl font-bold text-[#001c37] mb-6 flex items-center gap-2">
-                <svg class="w-7 h-7 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
-                Ajouter un produit
-            </h2>
-            <form id="form-add-product" action="admin.php" method="post" enctype="multipart/form-data" class="space-y-5">
-                <input type="hidden" name="add_product" value="1" />
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="space-y-4">
-                        <div>
-                            <label for="name" class="block text-sm font-semibold text-gray-700 mb-1">Nom du produit *</label>
-                            <input type="text" id="name" name="name" required
-                                   value="<?= htmlspecialchars($_POST['name'] ?? '') ?>"
-                                   class="w-full rounded-xl border border-gray-300 px-4 py-2.5 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-500 outline-none" />
-                        </div>
-                        <div>
-                            <label for="price" class="block text-sm font-semibold text-gray-700 mb-1">Prix (ex: 85 000 FCFA) *</label>
-                            <input type="text" id="price" name="price" required placeholder="85 000 FCFA"
-                                   value="<?= htmlspecialchars($_POST['price'] ?? '') ?>"
-                                   class="w-full rounded-xl border border-gray-300 px-4 py-2.5 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-500 outline-none" />
-                        </div>
-                        <div>
-                            <label for="description" class="block text-sm font-semibold text-gray-700 mb-1">Description</label>
-                            <textarea id="description" name="description" rows="3" class="w-full rounded-xl border border-gray-300 px-4 py-2.5 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-500 outline-none resize-none"><?= htmlspecialchars($_POST['description'] ?? '') ?></textarea>
-                        </div>
-                        <div>
-                            <label for="image" class="block text-sm font-semibold text-gray-700 mb-1">Image *</label>
-                            <input type="file" id="image" name="image" accept="image/jpeg,image/png,image/gif,image/webp" required
-                                   class="w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:bg-[#001c37] file:text-white file:font-semibold file:cursor-pointer hover:file:bg-[#003366]" />
-                            <p class="mt-1 text-xs text-gray-500">JPG, PNG, GIF ou WebP. Nom unique généré automatiquement.</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-col items-start">
-                        <span class="block text-sm font-semibold text-gray-700 mb-2">Aperçu de l'image</span>
-                        <div id="image-preview" class="w-full max-w-sm aspect-video bg-gray-100 rounded-xl border-2 border-dashed border-gray-300 flex items-center justify-center overflow-hidden">
-                            <span id="image-preview-placeholder" class="text-gray-400 text-sm">Aucune image sélectionnée</span>
-                            <img id="image-preview-img" src="" alt="" class="hidden w-full h-full object-cover" />
-                        </div>
-                    </div>
-                </div>
-                <button type="submit" id="btn-submit-add" class="px-6 py-3 bg-[#001c37] text-white font-bold rounded-xl hover:bg-yellow-500 hover:text-[#001c37] transition-colors duration-300 inline-flex items-center gap-2 min-w-[200px] justify-center">
-                    <span class="btn-add-text">Enregistrer le produit</span>
-                    <span class="btn-add-loader hidden items-center gap-2">
-                        <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                        Enregistrement...
-                    </span>
-                </button>
-            </form>
-        </section>
-
         <!-- Liste des produits -->
         <section class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6">
             <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
-                <h2 class="text-2xl font-bold text-[#001c37]">Liste des produits (<?= $totalProducts ?>)</h2>
-                <div class="flex items-center gap-2">
+                <h2 class="text-2xl font-bold text-[#001c37]">Liste des produits</h2>
+                <div class="flex items-center gap-2 w-full md:w-auto">
+                    <label for="product-search" class="sr-only">Rechercher un produit</label>
+                    <div class="relative w-full md:w-72">
+                        <svg class="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                        <input id="product-search" type="search" placeholder="Rechercher un produit..." class="w-full rounded-xl border border-gray-300 bg-white pl-9 pr-3 py-2 text-sm focus:ring-2 focus:ring-yellow-400 focus:border-yellow-500 outline-none" />
+                    </div>
                     <span class="text-sm text-gray-600">Affichage :</span>
                     <button type="button" id="view-grid" aria-pressed="true" aria-label="Affichage en grille" class="p-2 rounded-lg bg-yellow-100 text-yellow-700 hover:bg-yellow-200 transition-colors" title="Grille">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
@@ -249,6 +222,9 @@ if (isset($_GET['deleted']) && $_GET['deleted'] === '1') {
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
                     </button>
                 </div>
+            </div>
+            <div id="products-search-empty" class="hidden mb-6 rounded-xl border border-yellow-200 bg-yellow-50 p-4 text-sm text-yellow-800">
+                Aucun produit ne correspond a votre recherche.
             </div>
 
             <?php if (count($products) === 0): ?>
@@ -356,10 +332,129 @@ if (isset($_GET['deleted']) && $_GET['deleted'] === '1') {
                 </div>
             </div>
         </div>
-    </main>
+        <div id="modal-delete" class="fixed inset-0 z-50 hidden" aria-hidden="true">
+            <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-[1px]" id="modal-delete-backdrop"></div>
+            <div class="relative flex min-h-full items-center justify-center p-4">
+                <div class="w-full max-w-md rounded-2xl bg-white border border-gray-200 shadow-2xl">
+                    <div class="p-6">
+                        <div class="mx-auto mb-4 w-12 h-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v4m0 4h.01M7.05 4.55a9 9 0 1110.9 0A9 9 0 017.05 4.55z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-center text-[#001c37]">Supprimer le produit</h3>
+                        <p id="delete-modal-text" class="mt-2 text-sm text-gray-600 text-center">Cette action est irreversible.</p>
+                        <div class="mt-6 flex items-center justify-center gap-3">
+                            <button type="button" id="modal-delete-cancel" class="px-4 py-2.5 rounded-xl border border-gray-300 text-gray-700 font-medium hover:bg-gray-50">Annuler</button>
+                            <button type="button" id="modal-delete-confirm" class="px-4 py-2.5 rounded-xl bg-red-600 text-white font-semibold hover:bg-red-700 inline-flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6M9 7V4a1 1 0 011-1h4a1 1 0 011 1v3m-7 0h8"/>
+                                </svg>
+                                Supprimer
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Ajouter un produit -->
+        <?php $openAddModal = $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_product']) && $error !== ''; ?>
+        <div id="modal-add" class="fixed inset-0 z-50 <?= $openAddModal ? '' : 'hidden' ?>" aria-hidden="<?= $openAddModal ? 'false' : 'true' ?>">
+            <div class="absolute inset-0 bg-black/50" id="modal-add-backdrop"></div>
+            <div class="relative flex min-h-full items-center justify-center p-4">
+                <div class="relative w-full max-w-3xl bg-white rounded-2xl shadow-xl border border-gray-200 max-h-[90vh] overflow-y-auto">
+                    <div class="p-6">
+                        <div class="mb-6 flex items-center justify-between gap-3">
+                            <h3 class="text-xl font-bold text-[#001c37]">Ajouter un produit</h3>
+                            <button type="button" id="modal-add-close-top" class="w-10 h-10 rounded-xl border border-gray-200 text-gray-500 hover:text-gray-700 hover:bg-gray-50 transition-colors">✕</button>
+                        </div>
+                        <form id="form-add-product" action="admin.php" method="post" enctype="multipart/form-data" class="space-y-5">
+                            <input type="hidden" name="add_product" value="1" />
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-4">
+                                    <div>
+                                        <label for="name" class="block text-sm font-semibold text-gray-700 mb-1">Nom du produit *</label>
+                                        <input type="text" id="name" name="name" required
+                                               value="<?= htmlspecialchars($_POST['name'] ?? '') ?>"
+                                               class="w-full rounded-xl border border-gray-300 px-4 py-2.5 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-500 outline-none" />
+                                    </div>
+                                    <div>
+                                        <label for="price" class="block text-sm font-semibold text-gray-700 mb-1">Prix (ex: 85 000 FCFA) *</label>
+                                        <input type="text" id="price" name="price" required placeholder="85 000 FCFA"
+                                               value="<?= htmlspecialchars($_POST['price'] ?? '') ?>"
+                                               class="w-full rounded-xl border border-gray-300 px-4 py-2.5 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-500 outline-none" />
+                                    </div>
+                                    <div>
+                                        <label for="description" class="block text-sm font-semibold text-gray-700 mb-1">Description</label>
+                                        <textarea id="description" name="description" rows="3" class="w-full rounded-xl border border-gray-300 px-4 py-2.5 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-500 outline-none resize-none"><?= htmlspecialchars($_POST['description'] ?? '') ?></textarea>
+                                    </div>
+                                    <div>
+                                        <label for="image" class="block text-sm font-semibold text-gray-700 mb-1">Image *</label>
+                                        <input type="file" id="image" name="image" accept="image/jpeg,image/png,image/gif,image/webp" required
+                                               class="w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:bg-[#001c37] file:text-white file:font-semibold file:cursor-pointer hover:file:bg-[#003366]" />
+                                        <p class="mt-1 text-xs text-gray-500">JPG, PNG, GIF ou WebP. Nom unique généré automatiquement.</p>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-start">
+                                    <span class="block text-sm font-semibold text-gray-700 mb-2">Aperçu de l'image</span>
+                                    <div id="image-preview" class="w-full aspect-video bg-gray-100 rounded-xl border-2 border-dashed border-gray-300 flex items-center justify-center overflow-hidden">
+                                        <span id="image-preview-placeholder" class="text-gray-400 text-sm">Aucune image sélectionnée</span>
+                                        <img id="image-preview-img" src="" alt="" class="hidden w-full h-full object-cover" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button type="submit" id="btn-submit-add" class="px-6 py-3 bg-[#001c37] text-white font-bold rounded-xl hover:bg-yellow-500 hover:text-[#001c37] transition-colors duration-300 inline-flex items-center gap-2 min-w-[200px] justify-center">
+                                    <span class="btn-add-text">Enregistrer le produit</span>
+                                    <span class="btn-add-loader hidden items-center gap-2">
+                                        <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                        </svg>
+                                        Enregistrement...
+                                    </span>
+                                </button>
+                                <button type="button" id="modal-add-close" class="px-4 py-2.5 border border-gray-300 rounded-xl font-medium text-gray-700 hover:bg-gray-50">Annuler</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </main>
+    </div>
 
     <script>
         (function () {
+            var modalAdd = document.getElementById('modal-add');
+            var openAddModalBtn = document.getElementById('open-add-modal');
+            var modalAddBackdrop = document.getElementById('modal-add-backdrop');
+            var modalAddClose = document.getElementById('modal-add-close');
+            var modalAddCloseTop = document.getElementById('modal-add-close-top');
+            var modalDelete = document.getElementById('modal-delete');
+            var modalDeleteBackdrop = document.getElementById('modal-delete-backdrop');
+            var modalDeleteCancel = document.getElementById('modal-delete-cancel');
+            var modalDeleteConfirm = document.getElementById('modal-delete-confirm');
+            var deleteModalText = document.getElementById('delete-modal-text');
+            var pendingDeleteId = null;
+
+            function openAddModal() {
+                if (!modalAdd) return;
+                modalAdd.classList.remove('hidden');
+                modalAdd.setAttribute('aria-hidden', 'false');
+            }
+
+            function closeAddModal() {
+                if (!modalAdd) return;
+                modalAdd.classList.add('hidden');
+                modalAdd.setAttribute('aria-hidden', 'true');
+            }
+
+            if (openAddModalBtn) openAddModalBtn.addEventListener('click', openAddModal);
+            if (modalAddBackdrop) modalAddBackdrop.addEventListener('click', closeAddModal);
+            if (modalAddClose) modalAddClose.addEventListener('click', closeAddModal);
+            if (modalAddCloseTop) modalAddCloseTop.addEventListener('click', closeAddModal);
+
             // ——— Loader bouton Enregistrer (ajout) ———
             var formAdd = document.getElementById('form-add-product');
             var btnAdd = document.getElementById('btn-submit-add');
@@ -480,22 +575,67 @@ if (isset($_GET['deleted']) && $_GET['deleted'] === '1') {
                 });
             }
 
-            // ——— Suppression avec alerte ———
+            // ——— Suppression avec dialog stylé ———
             var formDelete = document.getElementById('form-delete-product');
             var deleteIdInput = document.getElementById('delete-product-id');
+            function openDeleteModal(id, name) {
+                pendingDeleteId = id;
+                if (deleteModalText) {
+                    deleteModalText.textContent = 'Voulez-vous vraiment supprimer "' + (name || 'ce produit') + '" ? Cette action est irreversible.';
+                }
+                if (modalDelete) {
+                    modalDelete.classList.remove('hidden');
+                    modalDelete.setAttribute('aria-hidden', 'false');
+                }
+            }
+            function closeDeleteModal() {
+                pendingDeleteId = null;
+                if (modalDelete) {
+                    modalDelete.classList.add('hidden');
+                    modalDelete.setAttribute('aria-hidden', 'true');
+                }
+            }
             document.querySelectorAll('.btn-delete-product').forEach(function (btn) {
                 btn.addEventListener('click', function () {
                     var id = this.getAttribute('data-id');
                     var name = this.getAttribute('data-name') || 'ce produit';
-                    if (!confirm('Êtes-vous sûr de vouloir supprimer le produit « ' + name + ' » ?\n\nCliquez sur OK pour supprimer, ou Annuler pour garder le produit.')) return;
-                    if (deleteIdInput) deleteIdInput.value = id;
-                    if (formDelete) formDelete.submit();
+                    openDeleteModal(id, name);
                 });
             });
+            if (modalDeleteBackdrop) modalDeleteBackdrop.addEventListener('click', closeDeleteModal);
+            if (modalDeleteCancel) modalDeleteCancel.addEventListener('click', closeDeleteModal);
+            if (modalDeleteConfirm) {
+                modalDeleteConfirm.addEventListener('click', function () {
+                    if (!pendingDeleteId) return;
+                    if (deleteIdInput) deleteIdInput.value = pendingDeleteId;
+                    if (formDelete) formDelete.submit();
+                });
+            }
             // ——— Toggle Grille / Liste ———
             var container = document.getElementById('products-container');
             var viewGrid = document.getElementById('view-grid');
             var viewList = document.getElementById('view-list');
+            var searchInput = document.getElementById('product-search');
+            var searchEmpty = document.getElementById('products-search-empty');
+
+            function applySearchFilter() {
+                if (!container) return;
+                var cards = container.querySelectorAll('.product-card');
+                if (!cards.length) return;
+                var q = searchInput ? searchInput.value.trim().toLowerCase() : '';
+                var visible = 0;
+                cards.forEach(function (card) {
+                    var text = [
+                        card.getAttribute('data-name') || '',
+                        card.getAttribute('data-description') || '',
+                        card.getAttribute('data-price') || ''
+                    ].join(' ').toLowerCase();
+                    var match = q === '' || text.indexOf(q) !== -1;
+                    card.classList.toggle('hidden', !match);
+                    if (match) visible++;
+                });
+                if (searchEmpty) searchEmpty.classList.toggle('hidden', !(q !== '' && visible === 0));
+            }
 
             function setView(mode) {
                 if (!container) return;
@@ -533,6 +673,7 @@ if (isset($_GET['deleted']) && $_GET['deleted'] === '1') {
 
             if (viewGrid) viewGrid.addEventListener('click', function () { setView('grid'); });
             if (viewList) viewList.addEventListener('click', function () { setView('list'); });
+            if (searchInput) searchInput.addEventListener('input', applySearchFilter);
         })();
     </script>
 </body>
