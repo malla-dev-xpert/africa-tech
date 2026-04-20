@@ -28,6 +28,17 @@ Options +FollowSymLinks
 # Empêcher l'accès au répertoire logs/
 <IfModule mod_rewrite.c>
     RewriteEngine On
+
+    # 1) URL canonique sans extension: /about.php -> /about
+    RewriteCond %{THE_REQUEST} \s/+(.+?)\.php(?:[\s?]|$) [NC]
+    RewriteRule ^ %1 [R=301,L,NE]
+
+    # 2) URL propre vers script PHP: /about -> /about.php
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^(.+)$ $1.php [L,QSA]
+
     RewriteRule ^logs/ - [F,L]
 </IfModule>
 

@@ -39,13 +39,18 @@ Puis verifier que `DB_NAME` dans `.env` correspond bien au nom de la base.
 Depuis la racine du projet:
 
 ```bash
-php -S localhost:8000 -t public
+php -S localhost:8000 -t public public/router.php
 ```
 
 Ouvrir ensuite:
 
 - `http://localhost:8000`
-- `http://localhost:8000/admin.php` (interface admin)
+- `http://localhost:8000/admin` (interface admin)
+
+Le routeur local applique aussi les URLs propres:
+
+- `http://localhost:8000/about` au lieu de `about.php`
+- redirection automatique de `*.php` vers l'URL sans extension
 
 ## 5) Structure utile
 
